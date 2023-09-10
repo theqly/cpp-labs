@@ -1,3 +1,5 @@
-//
-// Created by theql on 9/10/2023.
-//
+#include <iostream>
+
+int main(int argc, char** argv){
+  std::cout << "lab0b" << std::endl;
+}
