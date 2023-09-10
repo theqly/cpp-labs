@@ -1,10 +1,4 @@
 "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/theql/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.8660.186/bin/ninja/win/x64/ninja.exe -G Ninja -S D:\programming\projects\cpp-labs\lab0\lab0a -B D:\programming\projects\cpp-labs\lab0\lab0a\cmake-build-debug
--- The CXX compiler identification is GNU 13.1.0
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Users/theql/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.8660.186/bin/mingw/bin/g++.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done (0.7s)
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: D:/programming/projects/cpp-labs/lab0/lab0a/cmake-build-debug

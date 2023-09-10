@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lab0.exe"
+			"path" : "lab0a.exe"
 		},
 		{
-			"path" : "lab0.pdb"
+			"path" : "lab0a.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -51,7 +51,7 @@
 			]
 		}
 	],
-	"id" : "lab0::@6890427a1f51a3e7e1df",
+	"id" : "lab0a::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -71,8 +71,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "lab0",
-	"nameOnDisk" : "lab0.exe",
+	"name" : "lab0a",
+	"nameOnDisk" : "lab0a.exe",
 	"paths" : 
 	{
 		"build" : ".",

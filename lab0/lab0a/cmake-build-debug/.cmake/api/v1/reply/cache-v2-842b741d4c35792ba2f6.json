@@ -743,7 +743,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "lab0"
+			"value" : "lab0a"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1175,6 +1175,42 @@
 		},
 		{
 			"name" : "lab0_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "D:/programming/projects/cpp-labs/lab0/lab0a"
+		},
+		{
+			"name" : "lab0a_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "D:/programming/projects/cpp-labs/lab0/lab0a/cmake-build-debug"
+		},
+		{
+			"name" : "lab0a_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "lab0a_SOURCE_DIR",
 			"properties" : 
 			[
 				{

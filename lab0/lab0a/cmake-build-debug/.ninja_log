@@ -1,6 +1,7 @@
 # ninja log v5
-12	366	7160368323170726	CMakeFiles/lab0.dir/module1.cpp.obj	27fc705707689edd
-8	371	7160368323220734	CMakeFiles/lab0.dir/module2.cpp.obj	701c020863b32be8
-3	447	7160368323980720	CMakeFiles/lab0.dir/main.cpp.obj	2fd2f631c6ef04c8
 282	366	7160371470277381	lab0.exe	d40cafafbe99c332
-3	282	7160371469457363	CMakeFiles/lab0.dir/module3.cpp.obj	4d8de88cd50c7d06
+0	714	7160379043998794	CMakeFiles/lab0a.dir/main.cpp.obj	8f5eba9c9dda54d2
+224	814	7160379044518806	CMakeFiles/lab0a.dir/module3.cpp.obj	5f61eae2e5f9fdfc
+6	870	7160379044668765	CMakeFiles/lab0a.dir/module2.cpp.obj	b027f04527d0d8b7
+211	887	7160379044668765	CMakeFiles/lab0a.dir/module1.cpp.obj	1817d05eec2b2767
+887	1072	7160379047518786	lab0a.exe	bee7abba7aee1f2
