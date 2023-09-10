@@ -1,5 +1,5 @@
 #include <string>
 
-namespace Module1{
+namespace Module3{
   std::string getMyName();
 }

@@ -1,0 +1,7 @@
+# ninja log v5
+12	366	7160368323170726	CMakeFiles/lab0.dir/module1.cpp.obj	27fc705707689edd
+8	371	7160368323220734	CMakeFiles/lab0.dir/module2.cpp.obj	701c020863b32be8
+3	447	7160368323980720	CMakeFiles/lab0.dir/main.cpp.obj	2fd2f631c6ef04c8
+447	551	7160368324980733	lab0.exe	e5258bb1a3a74fea
+3	282	7160371469457363	CMakeFiles/lab0.dir/module3.cpp.obj	4d8de88cd50c7d06
+282	366	7160371470277381	lab0.exe	d40cafafbe99c332
