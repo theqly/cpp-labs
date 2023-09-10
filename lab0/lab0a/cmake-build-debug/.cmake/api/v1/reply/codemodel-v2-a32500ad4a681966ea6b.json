@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/programming/projects/cpp-labs/lab0/cmake-build-debug",
-		"source" : "D:/programming/projects/cpp-labs/lab0"
+		"build" : "D:/programming/projects/cpp-labs/lab0/lab0a/cmake-build-debug",
+		"source" : "D:/programming/projects/cpp-labs/lab0/lab0a"
 	},
 	"version" : 
 	{
