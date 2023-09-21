@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/programming/projects/cpp-labs/notlabs/cmake-build-debug",
+  "command": "g++ -g -fdiagnostics-color=always -o CMakeFiles\\notlabs.dir\\main.cpp.obj -c D:\\programming\\projects\\cpp-labs\\notlabs\\main.cpp",
+  "file": "D:\\programming\\projects\\cpp-labs\\notlabs\\main.cpp",
+  "output": "CMakeFiles\\notlabs.dir\\main.cpp.obj"
+}
+]
