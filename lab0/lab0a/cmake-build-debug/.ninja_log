@@ -2,6 +2,11 @@
 282	366	7160371470277381	lab0.exe	d40cafafbe99c332
 0	714	7160379043998794	CMakeFiles/lab0a.dir/main.cpp.obj	8f5eba9c9dda54d2
 224	814	7160379044518806	CMakeFiles/lab0a.dir/module3.cpp.obj	5f61eae2e5f9fdfc
+887	1072	7160379047518786	lab0a.exe	bee7abba7aee1f2
 6	870	7160379044668765	CMakeFiles/lab0a.dir/module2.cpp.obj	b027f04527d0d8b7
 211	887	7160379044668765	CMakeFiles/lab0a.dir/module1.cpp.obj	1817d05eec2b2767
-887	1072	7160379047518786	lab0a.exe	bee7abba7aee1f2
+8	342	7170122236265109	CMakeFiles/lab0a.dir/module1.cpp.obj	54b84b0b700772f8
+12	357	7170122236415119	CMakeFiles/lab0a.dir/module2.cpp.obj	ae857a15b4ac82b2
+16	360	7170122236455108	CMakeFiles/lab0a.dir/module3.cpp.obj	3dcb76f1b80a9393
+4	424	7170122237085083	CMakeFiles/lab0a.dir/main.cpp.obj	abd82b463db88392
+424	512	7170122237945084	lab0a.exe	2801f8ad1c9ed095
