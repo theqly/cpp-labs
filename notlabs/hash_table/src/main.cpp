@@ -1,3 +1,6 @@
-//
-// Created by theql on 9/21/2023.
-//
+#include <iostream>
+
+int main(){
+  std::cout << "bad ass" << std::endl;
+  return 0;
+}
