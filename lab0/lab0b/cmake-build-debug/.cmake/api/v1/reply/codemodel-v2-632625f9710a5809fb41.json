@@ -173,16 +173,16 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "hash_table_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-hash_table_test-Debug-e300fbf296249495f352.json",
-					"name" : "hash_table_test",
+					"id" : "lab0b::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab0b-Debug-26e165840c216b070da4.json",
+					"name" : "lab0b",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "lab0b::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lab0b-Debug-26e165840c216b070da4.json",
-					"name" : "lab0b",
+					"id" : "test1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test1-Debug-cd64eb4bf05434be1117.json",
+					"name" : "test1",
 					"projectIndex" : 0
 				}
 			]

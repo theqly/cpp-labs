@@ -1,5 +1,5 @@
 D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/CMakeFiles/lab0b.dir
-D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/CMakeFiles/hash_table_test.dir
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/CMakeFiles/test1.dir
 D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/CMakeFiles/edit_cache.dir
 D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/CMakeFiles/list_install_components.dir

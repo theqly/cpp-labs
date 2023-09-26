@@ -13,6 +13,6 @@ Call Stack (most recent call first):
   CMakeLists.txt:16 (FetchContent_Declare)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Configuring done (1.9s)
+-- Configuring done (2.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug

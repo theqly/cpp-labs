@@ -20,5 +20,8 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(hash_table_test test/test.cpp)
-target_link_libraries(hash_table_test GTest::gtest_main)
+add_executable(test1 test/test.cpp)
+
+target_include_directories(test1 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+target_link_libraries(test1 GTest::gtest_main)
