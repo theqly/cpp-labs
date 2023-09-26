@@ -1,0 +1,14 @@
+# Target labels
+ googletest-populate
+# Source files and their labels
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule
+D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule

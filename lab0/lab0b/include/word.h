@@ -1,22 +1,21 @@
-#ifndef lab0b
-#define lab0b
+#pragma once
 
 #include <string>
 
 using std::string;
 
-class word{
+namespace word {
+  class word {
 
- public:
-  word(string str, int freq);
+   public:
+    word(string str, int freq);
 
-  string getContext();
-  int getFrequency();
+    string getContext();
+    int getFrequency() const;
 
- private:
-  string context;
-  int frequency;
+   private:
+    string context;
+    int frequency;
 
-};
-
-#endif //lab0b
+  };
+}

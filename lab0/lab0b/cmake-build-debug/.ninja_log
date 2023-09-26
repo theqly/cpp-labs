@@ -1,5 +1,9 @@
 # ninja log v5
-2	179	7170127472865462	build.ninja	ba621d22e9980f31
+2	179	7174430785060438	build.ninja	ba621d22e9980f31
 828	945	7170121456753257	lab0b.exe	7a1246570b6e4ca2
 3	828	7170121455593157	CMakeFiles/lab0b.dir/src/main.cpp.obj	2d876aca51d8903
-7	336	7170114794282410	CMakeFiles/lab0b.dir/src/word.cpp.obj	f01c45fe4fe5ec2c
+3	639	7174427578440464	CMakeFiles/lab0b.dir/src/word.cpp.obj	f01c45fe4fe5ec2c
+193	1344	7174427585480465	CMakeFiles/lab0b.dir/src/handler.cpp.obj	c30e213e99a73c9e
+3	1086	7174430813310437	CMakeFiles/lab0b.dir/src/main.cpp.obj	2d876aca51d8903
+111	1410	7174430816720444	CMakeFiles/lab0b.dir/src/handler.cpp.obj	c30e213e99a73c9e
+1414	2016	7174430822770422	lab0b.exe	6bcbb68d23458e81
