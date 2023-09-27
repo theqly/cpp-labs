@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(STATUS "verifying file...
-       file='D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'")
+       file='C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'")
 
-  file("" "D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip" actual_value)
+  file("" "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(STATUS " hash of
-    D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip
+    C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip
   does not match expected value
     expected: ''
       actual: '${actual_value}'")
@@ -71,7 +71,7 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if("D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip" STREQUAL "")
+if("C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip" STREQUAL "")
   message(FATAL_ERROR "LOCAL can't be empty")
 endif()
 
@@ -79,36 +79,36 @@ if("https://github.com/google/googletest/archive/58d77fa8070e8cec2dc1ed015d66b45
   message(FATAL_ERROR "REMOTE can't be empty")
 endif()
 
-if(EXISTS "D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
+if(EXISTS "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(STATUS "File already exists and hash match (skip download):
-  file='D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
+  file='C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
   =''"
       )
       return()
     else()
       message(STATUS "File already exists but hash mismatch. Removing...")
-      file(REMOVE "D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
+      file(REMOVE "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
     endif()
   else()
     message(STATUS "File already exists but no hash specified (use URL_HASH):
-  file='D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
+  file='C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
+    file(REMOVE "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(STATUS "Downloading...
-   dst='D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
+   dst='C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
    timeout='none'
    inactivity timeout='none'"
 )
-set(download_retry_codes 7 6 8 15 28)
+set(download_retry_codes 7 6 8 15)
 set(skip_url_list)
 set(status_code)
 foreach(i RANGE ${retry_number})
@@ -126,7 +126,7 @@ foreach(i RANGE ${retry_number})
 
       file(
         DOWNLOAD
-        "${url}" "D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip"
+        "${url}" "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip"
         SHOW_PROGRESS
         # no TIMEOUT
         # no INACTIVITY_TIMEOUT
@@ -143,7 +143,7 @@ foreach(i RANGE ${retry_number})
         check_file_hash(has_hash hash_is_good)
         if(has_hash AND NOT hash_is_good)
           message(STATUS "Hash mismatch, removing...")
-          file(REMOVE "D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
+          file(REMOVE "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
         else()
           message(STATUS "Downloading... done")
           return()

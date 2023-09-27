@@ -1,4 +1,4 @@
-# Install script for directory: D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild
+# Install script for directory: C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/programming/projects/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-subbuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

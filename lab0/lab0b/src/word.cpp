@@ -1,13 +1,13 @@
 #include "word.h"
 
 namespace word{
-  word::word(string str, int freq) {
+  word::word(const string* str, int freq) {
     context = str;
     frequency = freq;
   }
 
-  string word::getContext() {
-    return context;
+  string word::getContext() const {
+    return *context;
   }
 
   int word::getFrequency() const {

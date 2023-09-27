@@ -8,13 +8,13 @@ namespace word {
   class word {
 
    public:
-    word(string str, int freq);
+    word(const string* str, int freq);
 
-    string getContext();
-    int getFrequency() const;
+    [[nodiscard]] string getContext() const;
+    [[nodiscard]] int getFrequency() const;
 
    private:
-    string context;
+    const string* context;
     int frequency;
 
   };

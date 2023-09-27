@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SRC src/main.cpp
         src/word.cpp
-        src/handler.cpp)
+        src/reader.cpp
+        src/writer.cpp)
 
 add_executable(${PROJECT_NAME} ${SRC})
 

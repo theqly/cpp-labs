@@ -1,13 +1,13 @@
-#include "handler.h"
+#include "reader.h"
+#include "writer.h"
 #include "word.h"
 
 int main(int argc, char** argv){
   string in = string(argv[1]);
   string out = string(argv[2]);
-  handler::handler hndl(in, out);
-
-  unordered_map<string, int> mp;
-  hndl.reading(mp);
-  hndl.writing(mp);
+  reader::reader rdr(in);
+  writer::writer wrt(out);
+  rdr.reading();
+  wrt.writing(rdr.getStat());
   return 0;
 }
