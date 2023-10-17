@@ -1,0 +1,108 @@
+        -:    0:Source:D:/programming/projects/cpp-labs/lab1/include/bitarray.h
+        -:    0:Graph:D:\programming\projects\cpp-labs\lab1\cmake-build-debug-coverage\CMakeFiles\lab1_test.dir\test\test1.cpp.gcno
+        -:    0:Data:D:\programming\projects\cpp-labs\lab1\cmake-build-debug-coverage\CMakeFiles\lab1_test.dir\test\test1.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef LAB1
+        -:    2:#define LAB1
+        -:    3:
+        -:    4:#include <string>
+        -:    5:
+        -:    6:#define type_size 8
+        -:    7:
+        -:    8:class BitArray
+        -:    9:{
+        -:   10: public:
+        -:   11:  BitArray();
+        -:   12:  ~BitArray();
+        -:   13:
+        -:   14:  //Конструирует массив, хранящий заданное количество бит.
+        -:   15:  //Первые sizeof(long) бит можно инициализровать с помощью параметра value.
+        -:   16:  explicit BitArray(int num_bits, unsigned char value = 0);
+        -:   17:  BitArray(const BitArray& b);
+        -:   18:
+        -:   19:
+        -:   20:  //Обменивает значения двух битовых массивов.
+        -:   21:  void swap(BitArray& b);
+        -:   22:
+        -:   23:  BitArray& operator=(const BitArray& b);
+        -:   24:
+        -:   25:
+        -:   26:  //Изменяет размер массива. В случае расширения, новые элементы
+        -:   27:  //инициализируются значением value.
+        -:   28:  void resize(int num_bits, bool value = false);
+        -:   29:  //Очищает массив.
+        -:   30:  void clear();
+        -:   31:  //Добавляет новый бит в конец массива. В случае необходимости
+        -:   32:  //происходит перераспределение памяти.
+        -:   33:  void push_back(bool bit);
+        -:   34:
+        -:   35:
+        -:   36:  //Битовые операции над массивами.
+        -:   37:  //Работают только на массивах одинакового размера.
+        -:   38:  //Обоснование реакции на параметр неверного размера входит в задачу.
+        -:   39:  BitArray& operator&=(const BitArray& b);
+        -:   40:  BitArray& operator|=(const BitArray& b);
+        -:   41:  BitArray& operator^=(const BitArray& b);
+        -:   42:
+        -:   43:  //Битовый сдвиг с заполнением нулями.
+        -:   44:  BitArray& operator<<=(int n);
+        -:   45:  BitArray& operator>>=(int n);
+        -:   46:  BitArray operator<<(int n) const;
+        -:   47:  BitArray operator>>(int n) const;
+        -:   48:
+        -:   49:
+        -:   50:  //Устанавливает бит с индексом n в значение val.
+        -:   51:  BitArray& set(int n, bool val = true);
+        -:   52:  //Заполняет массив истиной.
+        -:   53:  BitArray& set();
+        -:   54:
+        -:   55:  //Устанавливает бит с индексом n в значение false.
+        -:   56:  BitArray& reset(int n);
+        -:   57:  //Заполняет массив ложью.
+        -:   58:  BitArray& reset();
+        -:   59:
+        -:   60:  //true, если массив содержит истинный бит.
+        -:   61:  bool any() const;
+        -:   62:  //true, если все биты массива ложны.
+        -:   63:  bool none() const;
+        -:   64:  //Битовая инверсия
+        -:   65:  BitArray operator~() const;
+        -:   66:  //Подсчитывает количество единичных бит.
+        -:   67:  int count() const;
+        -:   68:
+        -:   69:
+        -:   70:  //Возвращает значение бита по индексу i.
+        -:   71:  bool operator[](int i) const;
+        -:   72:
+        -:   73:  int size() const;
+        -:   74:  bool empty() const;
+        -:   75:
+        -:   76:  //Возвращает строковое представление массива.
+        -:   77:  std::string to_string() const;
+        -:   78:
+        -:   79: private:
+        -:   80:  const int resizing_rate = 2;
+        -:   81:
+        -:   82:  size_t _capacity;
+        -:   83:  size_t _cur_size;
+        -:   84:
+        -:   85:  unsigned char* _array;
+        -:   86:
+function _ZN8BitArray4maskEy called 70 returned 100% blocks executed 100%
+       70:   87:  static unsigned char mask(size_t pos){
+       70:   88:    unsigned char one = 1;
+       70:   89:    return one << (7 - (pos % type_size));
+       70:   89-block  0
+        -:   90:  };
+        -:   91:
+        -:   92:};
+        -:   93:
+        -:   94:bool operator==(const BitArray & a, const BitArray & b);
+        -:   95:bool operator!=(const BitArray & a, const BitArray & b);
+        -:   96:
+        -:   97:BitArray operator&(const BitArray& b1, const BitArray& b2);
+        -:   98:BitArray operator|(const BitArray& b1, const BitArray& b2);
+        -:   99:BitArray operator^(const BitArray& b1, const BitArray& b2);
+        -:  100:
+        -:  101:
+        -:  102:#endif //LAB1

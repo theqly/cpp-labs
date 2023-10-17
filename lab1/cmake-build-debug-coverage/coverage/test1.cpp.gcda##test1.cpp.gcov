@@ -1,0 +1,2069 @@
+        -:    0:Source:D:/programming/projects/cpp-labs/lab1/test/test1.cpp
+        -:    0:Graph:D:\programming\projects\cpp-labs\lab1\cmake-build-debug-coverage\CMakeFiles\lab1_test.dir\test\test1.cpp.gcno
+        -:    0:Data:D:\programming\projects\cpp-labs\lab1\cmake-build-debug-coverage\CMakeFiles\lab1_test.dir\test\test1.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "bitarray.h"
+        -:    2:#include "../src/bitarray.cpp"
+        -:    3:#include <gtest/gtest.h>
+        -:    4:
+        4:    5:TEST(StandartConstr, Constrs){
+        1:    6:  BitArray arr = BitArray();
+       1*:    7:  EXPECT_EQ(arr.size(), 0);
+        1:    8:}
+------------------
+_ZN27StandartConstr_Constrs_TestC1Ev:
+function _ZN27StandartConstr_Constrs_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:    5:TEST(StandartConstr, Constrs){
+        1:    5-block  0
+call    0 returned 1
+------------------
+_ZN27StandartConstr_Constrs_TestD0Ev:
+function _ZN27StandartConstr_Constrs_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:    5:TEST(StandartConstr, Constrs){
+        1:    5-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN27StandartConstr_Constrs_TestD1Ev:
+function _ZN27StandartConstr_Constrs_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:    5:TEST(StandartConstr, Constrs){
+        1:    5-block  0
+call    0 returned 1
+------------------
+_ZN27StandartConstr_Constrs_Test8TestBodyEv:
+function _ZN27StandartConstr_Constrs_Test8TestBodyEv called 1 returned 100% blocks executed 31%
+        1:    5:TEST(StandartConstr, Constrs){
+        1:    6:  BitArray arr = BitArray();
+        1:    6-block  0
+call    0 returned 1
+       1*:    7:  EXPECT_EQ(arr.size(), 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    7-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:    7-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:    7-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:    7-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:    7-block  4
+call   17 never executed
+call   18 never executed
+        1:    7-block  5
+call   19 returned 1
+    $$$$$:    7-block  6
+    $$$$$:    7-block  7
+    $$$$$:    7-block  8
+call   20 never executed
+    $$$$$:    7-block  9
+    $$$$$:    7-block 10
+call   21 never executed
+    $$$$$:    7-block 11
+    $$$$$:    7-block 12
+call   22 never executed
+        1:    8:}
+call    0 returned 1
+    $$$$$:    8-block  0
+call    1 never executed
+------------------
+        -:    9:
+        4:   10:TEST(CapacityConstr, Constrs){
+        1:   11:  BitArray arr = BitArray(5);
+       1*:   12:  EXPECT_EQ(arr[3], 0);
+        1:   13:}
+------------------
+_ZN27CapacityConstr_Constrs_TestC1Ev:
+function _ZN27CapacityConstr_Constrs_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   10:TEST(CapacityConstr, Constrs){
+        1:   10-block  0
+call    0 returned 1
+------------------
+_ZN27CapacityConstr_Constrs_TestD0Ev:
+function _ZN27CapacityConstr_Constrs_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   10:TEST(CapacityConstr, Constrs){
+        1:   10-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN27CapacityConstr_Constrs_TestD1Ev:
+function _ZN27CapacityConstr_Constrs_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   10:TEST(CapacityConstr, Constrs){
+        1:   10-block  0
+call    0 returned 1
+------------------
+_ZN27CapacityConstr_Constrs_Test8TestBodyEv:
+function _ZN27CapacityConstr_Constrs_Test8TestBodyEv called 1 returned 100% blocks executed 31%
+        1:   10:TEST(CapacityConstr, Constrs){
+        1:   11:  BitArray arr = BitArray(5);
+        1:   11-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   12:  EXPECT_EQ(arr[3], 0);
+        1:   12-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   12-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   12-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   12-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   12-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   12-block  5
+call   17 never executed
+call   18 never executed
+        1:   12-block  6
+call   19 returned 1
+    $$$$$:   12-block  7
+    $$$$$:   12-block  8
+    $$$$$:   12-block  9
+call   20 never executed
+    $$$$$:   12-block 10
+    $$$$$:   12-block 11
+call   21 never executed
+    $$$$$:   12-block 12
+    $$$$$:   12-block 13
+call   22 never executed
+        1:   13:}
+call    0 returned 1
+    $$$$$:   13-block  0
+call    1 never executed
+------------------
+        -:   14:
+        4:   15:TEST(CopyConstr, Constrs){
+        1:   16:  BitArray arr1 = BitArray(15);
+        1:   17:  arr1.reset(10);
+       1*:   18:  EXPECT_EQ(arr1[10], 0);
+        1:   19:  arr1.reset();
+        2:   20:  BitArray arr2 = BitArray(arr1);
+       1*:   21:  EXPECT_EQ(arr2[12], 0);
+        1:   22:}
+------------------
+_ZN23CopyConstr_Constrs_TestC1Ev:
+function _ZN23CopyConstr_Constrs_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   15:TEST(CopyConstr, Constrs){
+        1:   15-block  0
+call    0 returned 1
+------------------
+_ZN23CopyConstr_Constrs_TestD0Ev:
+function _ZN23CopyConstr_Constrs_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   15:TEST(CopyConstr, Constrs){
+        1:   15-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN23CopyConstr_Constrs_TestD1Ev:
+function _ZN23CopyConstr_Constrs_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   15:TEST(CopyConstr, Constrs){
+        1:   15-block  0
+call    0 returned 1
+------------------
+_ZN23CopyConstr_Constrs_Test8TestBodyEv:
+function _ZN23CopyConstr_Constrs_Test8TestBodyEv called 1 returned 100% blocks executed 31%
+        1:   15:TEST(CopyConstr, Constrs){
+        1:   16:  BitArray arr1 = BitArray(15);
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   17:  arr1.reset(10);
+        1:   17-block  0
+call    0 returned 1
+       1*:   18:  EXPECT_EQ(arr1[10], 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   18-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   18-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   18-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   18-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   18-block  4
+call   17 never executed
+call   18 never executed
+        1:   18-block  5
+call   19 returned 1
+    $$$$$:   18-block  6
+    $$$$$:   18-block  7
+    $$$$$:   18-block  8
+call   20 never executed
+    $$$$$:   18-block  9
+    $$$$$:   18-block 10
+call   21 never executed
+    $$$$$:   18-block 11
+    $$$$$:   18-block 12
+call   22 never executed
+        1:   19:  arr1.reset();
+call    0 returned 1
+        2:   20:  BitArray arr2 = BitArray(arr1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:   20-block  0
+call    4 never executed
+       1*:   21:  EXPECT_EQ(arr2[12], 0);
+        1:   21-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   21-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   21-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   21-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   21-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   21-block  5
+call   17 never executed
+call   18 never executed
+        1:   21-block  6
+call   19 returned 1
+    $$$$$:   21-block  7
+    $$$$$:   21-block  8
+    $$$$$:   21-block  9
+call   20 never executed
+    $$$$$:   21-block 10
+    $$$$$:   21-block 11
+call   21 never executed
+    $$$$$:   21-block 12
+    $$$$$:   21-block 13
+call   22 never executed
+        1:   22:}
+call    0 returned 1
+    $$$$$:   22-block  0
+call    1 never executed
+------------------
+        -:   23:
+        4:   24:TEST(Swap, Swap){
+        1:   25:  BitArray arr1 = BitArray(14);
+        1:   26:  BitArray arr2= BitArray(8);
+        1:   27:  arr1.swap(arr2);
+       1*:   28:  EXPECT_EQ(arr1.size(), 8);
+       1*:   29:  EXPECT_EQ(arr2.size(), 14);
+        1:   30:}
+------------------
+_ZN14Swap_Swap_TestC1Ev:
+function _ZN14Swap_Swap_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   24:TEST(Swap, Swap){
+        1:   24-block  0
+call    0 returned 1
+------------------
+_ZN14Swap_Swap_TestD0Ev:
+function _ZN14Swap_Swap_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   24:TEST(Swap, Swap){
+        1:   24-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN14Swap_Swap_TestD1Ev:
+function _ZN14Swap_Swap_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   24:TEST(Swap, Swap){
+        1:   24-block  0
+call    0 returned 1
+------------------
+_ZN14Swap_Swap_Test8TestBodyEv:
+function _ZN14Swap_Swap_Test8TestBodyEv called 1 returned 100% blocks executed 30%
+        1:   24:TEST(Swap, Swap){
+        1:   25:  BitArray arr1 = BitArray(14);
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   26:  BitArray arr2= BitArray(8);
+        1:   26-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   27:  arr1.swap(arr2);
+        1:   27-block  0
+call    0 returned 1
+       1*:   28:  EXPECT_EQ(arr1.size(), 8);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   28-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   28-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   28-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   28-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   28-block  4
+call   17 never executed
+call   18 never executed
+        1:   28-block  5
+call   19 returned 1
+    $$$$$:   28-block  6
+    $$$$$:   28-block  7
+    $$$$$:   28-block  8
+call   20 never executed
+    $$$$$:   28-block  9
+    $$$$$:   28-block 10
+call   21 never executed
+    $$$$$:   28-block 11
+    $$$$$:   28-block 12
+call   22 never executed
+       1*:   29:  EXPECT_EQ(arr2.size(), 14);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   29-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   29-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   29-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   29-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   29-block  4
+call   17 never executed
+call   18 never executed
+        1:   29-block  5
+call   19 returned 1
+    $$$$$:   29-block  6
+    $$$$$:   29-block  7
+    $$$$$:   29-block  8
+call   20 never executed
+    $$$$$:   29-block  9
+    $$$$$:   29-block 10
+call   21 never executed
+    $$$$$:   29-block 11
+    $$$$$:   29-block 12
+call   22 never executed
+        1:   30:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   30-block  0
+call    2 never executed
+    $$$$$:   30-block  1
+call    3 never executed
+------------------
+        -:   31:
+        4:   32:TEST(CopyOperator, Operators){
+        1:   33:  BitArray arr1 = BitArray(15);
+        1:   34:  arr1.set();
+        1:   35:  BitArray arr2 = BitArray(13);
+        1:   36:  arr2.reset();
+       1*:   37:  EXPECT_EQ(arr2.size(), 13);
+       1*:   38:  EXPECT_EQ(arr2[8], 0);
+        1:   39:  arr2 = arr1;
+       1*:   40:  EXPECT_EQ(arr2.size(), 15);
+       1*:   41:  EXPECT_EQ(arr2[8], 1);
+        1:   42:}
+------------------
+_ZN27CopyOperator_Operators_TestC1Ev:
+function _ZN27CopyOperator_Operators_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   32:TEST(CopyOperator, Operators){
+        1:   32-block  0
+call    0 returned 1
+------------------
+_ZN27CopyOperator_Operators_TestD0Ev:
+function _ZN27CopyOperator_Operators_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   32:TEST(CopyOperator, Operators){
+        1:   32-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN27CopyOperator_Operators_TestD1Ev:
+function _ZN27CopyOperator_Operators_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   32:TEST(CopyOperator, Operators){
+        1:   32-block  0
+call    0 returned 1
+------------------
+_ZN27CopyOperator_Operators_Test8TestBodyEv:
+function _ZN27CopyOperator_Operators_Test8TestBodyEv called 1 returned 100% blocks executed 28%
+        1:   32:TEST(CopyOperator, Operators){
+        1:   33:  BitArray arr1 = BitArray(15);
+        1:   33-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   34:  arr1.set();
+        1:   34-block  0
+call    0 returned 1
+        1:   35:  BitArray arr2 = BitArray(13);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36:  arr2.reset();
+        1:   36-block  0
+call    0 returned 1
+       1*:   37:  EXPECT_EQ(arr2.size(), 13);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   37-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   37-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   37-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   37-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   37-block  4
+call   17 never executed
+call   18 never executed
+        1:   37-block  5
+call   19 returned 1
+    $$$$$:   37-block  6
+    $$$$$:   37-block  7
+    $$$$$:   37-block  8
+call   20 never executed
+    $$$$$:   37-block  9
+    $$$$$:   37-block 10
+call   21 never executed
+    $$$$$:   37-block 11
+    $$$$$:   37-block 12
+call   22 never executed
+       1*:   38:  EXPECT_EQ(arr2[8], 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   38-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   38-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   38-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   38-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   38-block  4
+call   17 never executed
+call   18 never executed
+        1:   38-block  5
+call   19 returned 1
+    $$$$$:   38-block  6
+    $$$$$:   38-block  7
+    $$$$$:   38-block  8
+call   20 never executed
+    $$$$$:   38-block  9
+    $$$$$:   38-block 10
+call   21 never executed
+    $$$$$:   38-block 11
+    $$$$$:   38-block 12
+call   22 never executed
+        1:   39:  arr2 = arr1;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   40:  EXPECT_EQ(arr2.size(), 15);
+        1:   40-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   40-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   40-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   40-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   40-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   40-block  5
+call   17 never executed
+call   18 never executed
+        1:   40-block  6
+call   19 returned 1
+    $$$$$:   40-block  7
+    $$$$$:   40-block  8
+    $$$$$:   40-block  9
+call   20 never executed
+    $$$$$:   40-block 10
+    $$$$$:   40-block 11
+call   21 never executed
+    $$$$$:   40-block 12
+    $$$$$:   40-block 13
+call   22 never executed
+       1*:   41:  EXPECT_EQ(arr2[8], 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   41-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   41-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   41-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   41-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   41-block  4
+call   17 never executed
+call   18 never executed
+        1:   41-block  5
+call   19 returned 1
+    $$$$$:   41-block  6
+    $$$$$:   41-block  7
+    $$$$$:   41-block  8
+call   20 never executed
+    $$$$$:   41-block  9
+    $$$$$:   41-block 10
+call   21 never executed
+    $$$$$:   41-block 11
+    $$$$$:   41-block 12
+call   22 never executed
+        1:   42:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   42-block  0
+call    2 never executed
+    $$$$$:   42-block  1
+call    3 never executed
+------------------
+        -:   43:
+        4:   44:TEST(Resize, Resize){
+        1:   45:  BitArray arr1 = BitArray(14);
+        1:   46:  arr1.set();
+        1:   47:  arr1.resize(17);
+       1*:   48:  EXPECT_EQ(arr1.size(), 17);
+       1*:   49:  EXPECT_EQ(arr1[13], 1);
+        1:   50:}
+------------------
+_ZN18Resize_Resize_TestC1Ev:
+function _ZN18Resize_Resize_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   44:TEST(Resize, Resize){
+        1:   44-block  0
+call    0 returned 1
+------------------
+_ZN18Resize_Resize_TestD0Ev:
+function _ZN18Resize_Resize_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   44:TEST(Resize, Resize){
+        1:   44-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN18Resize_Resize_TestD1Ev:
+function _ZN18Resize_Resize_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   44:TEST(Resize, Resize){
+        1:   44-block  0
+call    0 returned 1
+------------------
+_ZN18Resize_Resize_Test8TestBodyEv:
+function _ZN18Resize_Resize_Test8TestBodyEv called 1 returned 100% blocks executed 30%
+        1:   44:TEST(Resize, Resize){
+        1:   45:  BitArray arr1 = BitArray(14);
+        1:   45-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   46:  arr1.set();
+        1:   46-block  0
+call    0 returned 1
+        1:   47:  arr1.resize(17);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   48:  EXPECT_EQ(arr1.size(), 17);
+        1:   48-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   48-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   48-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   48-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   48-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   48-block  5
+call   17 never executed
+call   18 never executed
+        1:   48-block  6
+call   19 returned 1
+    $$$$$:   48-block  7
+    $$$$$:   48-block  8
+    $$$$$:   48-block  9
+call   20 never executed
+    $$$$$:   48-block 10
+    $$$$$:   48-block 11
+call   21 never executed
+    $$$$$:   48-block 12
+    $$$$$:   48-block 13
+call   22 never executed
+       1*:   49:  EXPECT_EQ(arr1[13], 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   49-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   49-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   49-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   49-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   49-block  4
+call   17 never executed
+call   18 never executed
+        1:   49-block  5
+call   19 returned 1
+    $$$$$:   49-block  6
+    $$$$$:   49-block  7
+    $$$$$:   49-block  8
+call   20 never executed
+    $$$$$:   49-block  9
+    $$$$$:   49-block 10
+call   21 never executed
+    $$$$$:   49-block 11
+    $$$$$:   49-block 12
+call   22 never executed
+        1:   50:}
+call    0 returned 1
+    $$$$$:   50-block  0
+call    1 never executed
+------------------
+        -:   51:
+        4:   52:TEST(Clear, Clear){
+        1:   53:  BitArray arr1 = BitArray(14);
+        1:   54:  arr1.set();
+       1*:   55:  EXPECT_EQ(arr1.empty(), 0);
+        1:   56:  arr1.clear();
+       1*:   57:  EXPECT_EQ(arr1.empty(), 1);
+        1:   58:}
+------------------
+_ZN16Clear_Clear_TestC1Ev:
+function _ZN16Clear_Clear_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   52:TEST(Clear, Clear){
+        1:   52-block  0
+call    0 returned 1
+------------------
+_ZN16Clear_Clear_TestD0Ev:
+function _ZN16Clear_Clear_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   52:TEST(Clear, Clear){
+        1:   52-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN16Clear_Clear_TestD1Ev:
+function _ZN16Clear_Clear_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   52:TEST(Clear, Clear){
+        1:   52-block  0
+call    0 returned 1
+------------------
+_ZN16Clear_Clear_Test8TestBodyEv:
+function _ZN16Clear_Clear_Test8TestBodyEv called 1 returned 100% blocks executed 30%
+        1:   52:TEST(Clear, Clear){
+        1:   53:  BitArray arr1 = BitArray(14);
+        1:   53-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54:  arr1.set();
+        1:   54-block  0
+call    0 returned 1
+       1*:   55:  EXPECT_EQ(arr1.empty(), 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   55-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   55-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   55-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   55-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   55-block  4
+call   17 never executed
+call   18 never executed
+        1:   55-block  5
+call   19 returned 1
+    $$$$$:   55-block  6
+    $$$$$:   55-block  7
+    $$$$$:   55-block  8
+call   20 never executed
+    $$$$$:   55-block  9
+    $$$$$:   55-block 10
+call   21 never executed
+    $$$$$:   55-block 11
+    $$$$$:   55-block 12
+call   22 never executed
+        1:   56:  arr1.clear();
+call    0 returned 1
+       1*:   57:  EXPECT_EQ(arr1.empty(), 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   57-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   57-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   57-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   57-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   57-block  4
+call   17 never executed
+call   18 never executed
+        1:   57-block  5
+call   19 returned 1
+    $$$$$:   57-block  6
+    $$$$$:   57-block  7
+    $$$$$:   57-block  8
+call   20 never executed
+    $$$$$:   57-block  9
+    $$$$$:   57-block 10
+call   21 never executed
+    $$$$$:   57-block 11
+    $$$$$:   57-block 12
+call   22 never executed
+        1:   58:}
+call    0 returned 1
+    $$$$$:   58-block  0
+call    1 never executed
+------------------
+        -:   59:
+        4:   60:TEST(Pushing, Pushing){
+        1:   61:  BitArray arr1 = BitArray(15);
+        1:   62:  arr1.set();
+        1:   63:  arr1.push_back(false);
+       1*:   64:  EXPECT_EQ(arr1[15], 0);
+        1:   65:  arr1.push_back(true);
+       1*:   66:  EXPECT_EQ(arr1[16], 1);
+        1:   67:}
+------------------
+_ZN20Pushing_Pushing_TestC1Ev:
+function _ZN20Pushing_Pushing_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   60:TEST(Pushing, Pushing){
+        1:   60-block  0
+call    0 returned 1
+------------------
+_ZN20Pushing_Pushing_TestD0Ev:
+function _ZN20Pushing_Pushing_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   60:TEST(Pushing, Pushing){
+        1:   60-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN20Pushing_Pushing_TestD1Ev:
+function _ZN20Pushing_Pushing_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   60:TEST(Pushing, Pushing){
+        1:   60-block  0
+call    0 returned 1
+------------------
+_ZN20Pushing_Pushing_Test8TestBodyEv:
+function _ZN20Pushing_Pushing_Test8TestBodyEv called 1 returned 100% blocks executed 31%
+        1:   60:TEST(Pushing, Pushing){
+        1:   61:  BitArray arr1 = BitArray(15);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   62:  arr1.set();
+        1:   62-block  0
+call    0 returned 1
+        1:   63:  arr1.push_back(false);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   64:  EXPECT_EQ(arr1[15], 0);
+        1:   64-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   64-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   64-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   64-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   64-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   64-block  5
+call   17 never executed
+call   18 never executed
+        1:   64-block  6
+call   19 returned 1
+    $$$$$:   64-block  7
+    $$$$$:   64-block  8
+    $$$$$:   64-block  9
+call   20 never executed
+    $$$$$:   64-block 10
+    $$$$$:   64-block 11
+call   21 never executed
+    $$$$$:   64-block 12
+    $$$$$:   64-block 13
+call   22 never executed
+        1:   65:  arr1.push_back(true);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   66:  EXPECT_EQ(arr1[16], 1);
+        1:   66-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   66-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   66-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   66-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   66-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   66-block  5
+call   17 never executed
+call   18 never executed
+        1:   66-block  6
+call   19 returned 1
+    $$$$$:   66-block  7
+    $$$$$:   66-block  8
+    $$$$$:   66-block  9
+call   20 never executed
+    $$$$$:   66-block 10
+    $$$$$:   66-block 11
+call   21 never executed
+    $$$$$:   66-block 12
+    $$$$$:   66-block 13
+call   22 never executed
+        1:   67:}
+call    0 returned 1
+    $$$$$:   67-block  0
+call    1 never executed
+------------------
+        -:   68:
+        4:   69:TEST(BitAnd, BitOperators){
+        1:   70:  BitArray arr1 = BitArray(8);
+        1:   71:  BitArray arr2 = BitArray(8);
+        1:   72:  arr1.reset();
+        1:   73:  arr2.set();
+        1:   74:  arr2 &= arr1;
+        9:   75:  for(size_t i = 0; i < 8; ++i){
+       8*:   76:    EXPECT_EQ(arr2[i], 0);
+        -:   77:  }
+        1:   78:  arr1.set(3, true);
+        1:   79:  arr2.set();
+        1:   80:  arr2 &= arr1;
+        1:   81:  EXPECT_EQ(arr2[3], 1); //WHY FALSE
+       1*:   82:  EXPECT_EQ(arr2[2], 0);
+        1:   83:}
+------------------
+_ZN24BitAnd_BitOperators_TestC1Ev:
+function _ZN24BitAnd_BitOperators_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   69:TEST(BitAnd, BitOperators){
+        1:   69-block  0
+call    0 returned 1
+------------------
+_ZN24BitAnd_BitOperators_TestD0Ev:
+function _ZN24BitAnd_BitOperators_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   69:TEST(BitAnd, BitOperators){
+        1:   69-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN24BitAnd_BitOperators_TestD1Ev:
+function _ZN24BitAnd_BitOperators_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   69:TEST(BitAnd, BitOperators){
+        1:   69-block  0
+call    0 returned 1
+------------------
+_ZN24BitAnd_BitOperators_Test8TestBodyEv:
+function _ZN24BitAnd_BitOperators_Test8TestBodyEv called 1 returned 100% blocks executed 42%
+        1:   69:TEST(BitAnd, BitOperators){
+        1:   70:  BitArray arr1 = BitArray(8);
+        1:   70-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71:  BitArray arr2 = BitArray(8);
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   72:  arr1.reset();
+        1:   72-block  0
+call    0 returned 1
+        1:   73:  arr2.set();
+call    0 returned 1
+        1:   74:  arr2 &= arr1;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   75:  for(size_t i = 0; i < 8; ++i){
+        1:   75-block  0
+        9:   75-block  1
+branch  0 taken 8
+branch  1 taken 1 (fallthrough)
+       8*:   76:    EXPECT_EQ(arr2[i], 0);
+        8:   76-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        8:   76-block  1
+call    4 returned 8
+branch  5 taken 0 (fallthrough)
+branch  6 taken 8
+    %%%%%:   76-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   76-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   76-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   76-block  5
+call   17 never executed
+call   18 never executed
+        8:   76-block  6
+call   19 returned 8
+    $$$$$:   76-block  7
+    $$$$$:   76-block  8
+    $$$$$:   76-block  9
+call   20 never executed
+    $$$$$:   76-block 10
+    $$$$$:   76-block 11
+call   21 never executed
+    $$$$$:   76-block 12
+    $$$$$:   76-block 13
+call   22 never executed
+        -:   77:  }
+        1:   78:  arr1.set(3, true);
+        1:   78-block  0
+call    0 returned 1
+        1:   79:  arr2.set();
+call    0 returned 1
+        1:   80:  arr2 &= arr1;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   81:  EXPECT_EQ(arr2[3], 1); //WHY FALSE
+        1:   81-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   81-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0
+        1:   81-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   81-block  3
+call   10 returned 1
+call   11 returned 1
+branch 12 taken 1 (fallthrough)
+branch 13 taken 0 (throw)
+        1:   81-block  4
+call   14 returned 1
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0 (throw)
+        1:   81-block  5
+call   17 returned 1
+call   18 returned 1
+        1:   81-block  6
+call   19 returned 1
+    $$$$$:   81-block  7
+    $$$$$:   81-block  8
+    $$$$$:   81-block  9
+call   20 never executed
+    $$$$$:   81-block 10
+    $$$$$:   81-block 11
+call   21 never executed
+    $$$$$:   81-block 12
+    $$$$$:   81-block 13
+call   22 never executed
+       1*:   82:  EXPECT_EQ(arr2[2], 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   82-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   82-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   82-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   82-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   82-block  4
+call   17 never executed
+call   18 never executed
+        1:   82-block  5
+call   19 returned 1
+    $$$$$:   82-block  6
+    $$$$$:   82-block  7
+    $$$$$:   82-block  8
+call   20 never executed
+    $$$$$:   82-block  9
+    $$$$$:   82-block 10
+call   21 never executed
+    $$$$$:   82-block 11
+    $$$$$:   82-block 12
+call   22 never executed
+        1:   83:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   83-block  0
+call    2 never executed
+    $$$$$:   83-block  1
+call    3 never executed
+------------------
+        -:   84:
+        4:   85:TEST(Any, Any){
+        1:   86:  BitArray arr1 = BitArray(8);
+        1:   87:  arr1.reset();
+       1*:   88:  EXPECT_EQ(arr1.any(), 0);
+        1:   89:  arr1.set(7, true);
+       1*:   90:  EXPECT_EQ(arr1.any(), 1);
+        1:   91:}
+------------------
+_ZN12Any_Any_TestC1Ev:
+function _ZN12Any_Any_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   85:TEST(Any, Any){
+        1:   85-block  0
+call    0 returned 1
+------------------
+_ZN12Any_Any_TestD0Ev:
+function _ZN12Any_Any_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   85:TEST(Any, Any){
+        1:   85-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN12Any_Any_TestD1Ev:
+function _ZN12Any_Any_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   85:TEST(Any, Any){
+        1:   85-block  0
+call    0 returned 1
+------------------
+_ZN12Any_Any_Test8TestBodyEv:
+function _ZN12Any_Any_Test8TestBodyEv called 1 returned 100% blocks executed 30%
+        1:   85:TEST(Any, Any){
+        1:   86:  BitArray arr1 = BitArray(8);
+        1:   86-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   87:  arr1.reset();
+        1:   87-block  0
+call    0 returned 1
+       1*:   88:  EXPECT_EQ(arr1.any(), 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   88-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   88-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   88-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   88-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   88-block  4
+call   17 never executed
+call   18 never executed
+        1:   88-block  5
+call   19 returned 1
+    $$$$$:   88-block  6
+    $$$$$:   88-block  7
+    $$$$$:   88-block  8
+call   20 never executed
+    $$$$$:   88-block  9
+    $$$$$:   88-block 10
+call   21 never executed
+    $$$$$:   88-block 11
+    $$$$$:   88-block 12
+call   22 never executed
+        1:   89:  arr1.set(7, true);
+call    0 returned 1
+       1*:   90:  EXPECT_EQ(arr1.any(), 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   90-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   90-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   90-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   90-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   90-block  4
+call   17 never executed
+call   18 never executed
+        1:   90-block  5
+call   19 returned 1
+    $$$$$:   90-block  6
+    $$$$$:   90-block  7
+    $$$$$:   90-block  8
+call   20 never executed
+    $$$$$:   90-block  9
+    $$$$$:   90-block 10
+call   21 never executed
+    $$$$$:   90-block 11
+    $$$$$:   90-block 12
+call   22 never executed
+        1:   91:}
+call    0 returned 1
+    $$$$$:   91-block  0
+call    1 never executed
+------------------
+        -:   92:
+        4:   93:TEST(None, None){
+        1:   94:  BitArray arr1 = BitArray(8);
+        1:   95:  arr1.reset();
+       1*:   96:  EXPECT_EQ(arr1.none(), 1);
+        1:   97:  arr1.set(7, true);
+       1*:   98:  EXPECT_EQ(arr1.none(), 0);
+        1:   99:}
+------------------
+_ZN14None_None_TestC1Ev:
+function _ZN14None_None_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:   93:TEST(None, None){
+        1:   93-block  0
+call    0 returned 1
+------------------
+_ZN14None_None_TestD0Ev:
+function _ZN14None_None_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   93:TEST(None, None){
+        1:   93-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN14None_None_TestD1Ev:
+function _ZN14None_None_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:   93:TEST(None, None){
+        1:   93-block  0
+call    0 returned 1
+------------------
+_ZN14None_None_Test8TestBodyEv:
+function _ZN14None_None_Test8TestBodyEv called 1 returned 100% blocks executed 30%
+        1:   93:TEST(None, None){
+        1:   94:  BitArray arr1 = BitArray(8);
+        1:   94-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   95:  arr1.reset();
+        1:   95-block  0
+call    0 returned 1
+       1*:   96:  EXPECT_EQ(arr1.none(), 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   96-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   96-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   96-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   96-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   96-block  4
+call   17 never executed
+call   18 never executed
+        1:   96-block  5
+call   19 returned 1
+    $$$$$:   96-block  6
+    $$$$$:   96-block  7
+    $$$$$:   96-block  8
+call   20 never executed
+    $$$$$:   96-block  9
+    $$$$$:   96-block 10
+call   21 never executed
+    $$$$$:   96-block 11
+    $$$$$:   96-block 12
+call   22 never executed
+        1:   97:  arr1.set(7, true);
+call    0 returned 1
+       1*:   98:  EXPECT_EQ(arr1.none(), 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   98-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   98-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   98-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   98-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   98-block  4
+call   17 never executed
+call   18 never executed
+        1:   98-block  5
+call   19 returned 1
+    $$$$$:   98-block  6
+    $$$$$:   98-block  7
+    $$$$$:   98-block  8
+call   20 never executed
+    $$$$$:   98-block  9
+    $$$$$:   98-block 10
+call   21 never executed
+    $$$$$:   98-block 11
+    $$$$$:   98-block 12
+call   22 never executed
+        1:   99:}
+call    0 returned 1
+    $$$$$:   99-block  0
+call    1 never executed
+------------------
+        -:  100:
+        4:  101:TEST(Inversion, BitOperators){
+        1:  102:  BitArray arr1 = BitArray(8);
+        1:  103:  arr1.set();
+       1*:  104:  EXPECT_EQ(arr1[2], 1);
+       1*:  105:  EXPECT_EQ(arr1[3], 1);
+        1:  106:  arr1 = ~arr1;
+       1*:  107:  EXPECT_EQ(arr1[2], 0);
+       1*:  108:  EXPECT_EQ(arr1[3], 0);
+        1:  109:}
+------------------
+_ZN27Inversion_BitOperators_TestC1Ev:
+function _ZN27Inversion_BitOperators_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:  101:TEST(Inversion, BitOperators){
+        1:  101-block  0
+call    0 returned 1
+------------------
+_ZN27Inversion_BitOperators_TestD0Ev:
+function _ZN27Inversion_BitOperators_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  101:TEST(Inversion, BitOperators){
+        1:  101-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN27Inversion_BitOperators_TestD1Ev:
+function _ZN27Inversion_BitOperators_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:  101:TEST(Inversion, BitOperators){
+        1:  101-block  0
+call    0 returned 1
+------------------
+_ZN27Inversion_BitOperators_Test8TestBodyEv:
+function _ZN27Inversion_BitOperators_Test8TestBodyEv called 1 returned 100% blocks executed 27%
+        1:  101:TEST(Inversion, BitOperators){
+        1:  102:  BitArray arr1 = BitArray(8);
+        1:  102-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  103:  arr1.set();
+        1:  103-block  0
+call    0 returned 1
+       1*:  104:  EXPECT_EQ(arr1[2], 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  104-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  104-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  104-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  104-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  104-block  4
+call   17 never executed
+call   18 never executed
+        1:  104-block  5
+call   19 returned 1
+    $$$$$:  104-block  6
+    $$$$$:  104-block  7
+    $$$$$:  104-block  8
+call   20 never executed
+    $$$$$:  104-block  9
+    $$$$$:  104-block 10
+call   21 never executed
+    $$$$$:  104-block 11
+    $$$$$:  104-block 12
+call   22 never executed
+       1*:  105:  EXPECT_EQ(arr1[3], 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  105-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  105-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  105-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  105-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  105-block  4
+call   17 never executed
+call   18 never executed
+        1:  105-block  5
+call   19 returned 1
+    $$$$$:  105-block  6
+    $$$$$:  105-block  7
+    $$$$$:  105-block  8
+call   20 never executed
+    $$$$$:  105-block  9
+    $$$$$:  105-block 10
+call   21 never executed
+    $$$$$:  105-block 11
+    $$$$$:  105-block 12
+call   22 never executed
+        1:  106:  arr1 = ~arr1;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  106-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  106-block  1
+call    6 returned 1
+    $$$$$:  106-block  2
+call    7 never executed
+    $$$$$:  106-block  3
+       1*:  107:  EXPECT_EQ(arr1[2], 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  107-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  107-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  107-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  107-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  107-block  4
+call   17 never executed
+call   18 never executed
+        1:  107-block  5
+call   19 returned 1
+    $$$$$:  107-block  6
+    $$$$$:  107-block  7
+    $$$$$:  107-block  8
+call   20 never executed
+    $$$$$:  107-block  9
+    $$$$$:  107-block 10
+call   21 never executed
+    $$$$$:  107-block 11
+    $$$$$:  107-block 12
+call   22 never executed
+       1*:  108:  EXPECT_EQ(arr1[3], 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  108-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  108-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  108-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  108-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  108-block  4
+call   17 never executed
+call   18 never executed
+        1:  108-block  5
+call   19 returned 1
+    $$$$$:  108-block  6
+    $$$$$:  108-block  7
+    $$$$$:  108-block  8
+call   20 never executed
+    $$$$$:  108-block  9
+    $$$$$:  108-block 10
+call   21 never executed
+    $$$$$:  108-block 11
+    $$$$$:  108-block 12
+call   22 never executed
+        1:  109:}
+call    0 returned 1
+    $$$$$:  109-block  0
+call    1 never executed
+------------------
+        -:  110:
+        4:  111:TEST(Counter, Counter){
+        1:  112:  BitArray arr1 = BitArray(8);
+       1*:  113:  EXPECT_EQ(arr1.count(), 0);
+        1:  114:  arr1.set(3, true);
+       1*:  115:  EXPECT_EQ(arr1.count(), 1);
+        1:  116:  arr1.set(4, true);
+        1:  117:  arr1.set(5, true);
+       1*:  118:  EXPECT_EQ(arr1.count(), 3);
+        1:  119:}
+------------------
+_ZN20Counter_Counter_TestC1Ev:
+function _ZN20Counter_Counter_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:  111:TEST(Counter, Counter){
+        1:  111-block  0
+call    0 returned 1
+------------------
+_ZN20Counter_Counter_TestD0Ev:
+function _ZN20Counter_Counter_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  111:TEST(Counter, Counter){
+        1:  111-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN20Counter_Counter_TestD1Ev:
+function _ZN20Counter_Counter_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:  111:TEST(Counter, Counter){
+        1:  111-block  0
+call    0 returned 1
+------------------
+_ZN20Counter_Counter_Test8TestBodyEv:
+function _ZN20Counter_Counter_Test8TestBodyEv called 1 returned 100% blocks executed 28%
+        1:  111:TEST(Counter, Counter){
+        1:  112:  BitArray arr1 = BitArray(8);
+        1:  112-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  113:  EXPECT_EQ(arr1.count(), 0);
+        1:  113-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  113-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  113-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  113-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  113-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  113-block  5
+call   17 never executed
+call   18 never executed
+        1:  113-block  6
+call   19 returned 1
+    $$$$$:  113-block  7
+    $$$$$:  113-block  8
+    $$$$$:  113-block  9
+call   20 never executed
+    $$$$$:  113-block 10
+    $$$$$:  113-block 11
+call   21 never executed
+    $$$$$:  113-block 12
+    $$$$$:  113-block 13
+call   22 never executed
+        1:  114:  arr1.set(3, true);
+call    0 returned 1
+       1*:  115:  EXPECT_EQ(arr1.count(), 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  115-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  115-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  115-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  115-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  115-block  4
+call   17 never executed
+call   18 never executed
+        1:  115-block  5
+call   19 returned 1
+    $$$$$:  115-block  6
+    $$$$$:  115-block  7
+    $$$$$:  115-block  8
+call   20 never executed
+    $$$$$:  115-block  9
+    $$$$$:  115-block 10
+call   21 never executed
+    $$$$$:  115-block 11
+    $$$$$:  115-block 12
+call   22 never executed
+        1:  116:  arr1.set(4, true);
+call    0 returned 1
+        1:  117:  arr1.set(5, true);
+call    0 returned 1
+       1*:  118:  EXPECT_EQ(arr1.count(), 3);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  118-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  118-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  118-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  118-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  118-block  4
+call   17 never executed
+call   18 never executed
+        1:  118-block  5
+call   19 returned 1
+    $$$$$:  118-block  6
+    $$$$$:  118-block  7
+    $$$$$:  118-block  8
+call   20 never executed
+    $$$$$:  118-block  9
+    $$$$$:  118-block 10
+call   21 never executed
+    $$$$$:  118-block 11
+    $$$$$:  118-block 12
+call   22 never executed
+        1:  119:}
+call    0 returned 1
+    $$$$$:  119-block  0
+call    1 never executed
+------------------
+        -:  120:
+        4:  121:TEST(To_string, To_string){
+        1:  122:  BitArray arr1 = BitArray(8);
+        1:  123:  arr1.set(3, true);
+        1:  124:  arr1.set(4, true);
+        1:  125:  arr1.set(5, true);
+        1:  126:  std::string str1 = arr1.to_string();
+        1:  127:  std::string str2 = "00011100";
+       1*:  128:  EXPECT_TRUE(str1 == str2 || str2 == str1);
+        1:  129:}
+------------------
+_ZN24To_string_To_string_TestC1Ev:
+function _ZN24To_string_To_string_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:  121:TEST(To_string, To_string){
+        1:  121-block  0
+call    0 returned 1
+------------------
+_ZN24To_string_To_string_TestD0Ev:
+function _ZN24To_string_To_string_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  121:TEST(To_string, To_string){
+        1:  121-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN24To_string_To_string_TestD1Ev:
+function _ZN24To_string_To_string_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:  121:TEST(To_string, To_string){
+        1:  121-block  0
+call    0 returned 1
+------------------
+_ZN24To_string_To_string_Test8TestBodyEv:
+function _ZN24To_string_To_string_Test8TestBodyEv called 1 returned 100% blocks executed 39%
+        1:  121:TEST(To_string, To_string){
+        1:  122:  BitArray arr1 = BitArray(8);
+        1:  122-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  123:  arr1.set(3, true);
+        1:  123-block  0
+call    0 returned 1
+        1:  124:  arr1.set(4, true);
+call    0 returned 1
+        1:  125:  arr1.set(5, true);
+call    0 returned 1
+        1:  126:  std::string str1 = arr1.to_string();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  127:  std::string str2 = "00011100";
+        1:  127-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  127-block  1
+       1*:  128:  EXPECT_TRUE(str1 == str2 || str2 == str1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  128-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed
+        1:  128-block  1
+    %%%%%:  128-block  2
+        1:  128-block  3
+call    6 returned 1
+call    7 returned 1
+branch  8 taken 0 (fallthrough)
+branch  9 taken 1
+    %%%%%:  128-block  4
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:  128-block  5
+call   13 never executed
+branch 14 never executed (fallthrough)
+branch 15 never executed (throw)
+    %%%%%:  128-block  6
+call   16 never executed
+call   17 never executed
+branch 18 never executed (fallthrough)
+branch 19 never executed (throw)
+    %%%%%:  128-block  7
+call   20 never executed
+branch 21 never executed (fallthrough)
+branch 22 never executed (throw)
+    %%%%%:  128-block  8
+call   23 never executed
+call   24 never executed
+call   25 never executed
+        1:  128-block  9
+call   26 returned 1
+    $$$$$:  128-block 10
+call   27 never executed
+    $$$$$:  128-block 11
+call   28 never executed
+    $$$$$:  128-block 12
+    $$$$$:  128-block 13
+    $$$$$:  128-block 14
+call   29 never executed
+    $$$$$:  128-block 15
+    $$$$$:  128-block 16
+call   30 never executed
+        1:  129:}
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  129-block  0
+call    3 never executed
+    $$$$$:  129-block  1
+call    4 never executed
+    $$$$$:  129-block  2
+call    5 never executed
+------------------
+        -:  130:
+        4:  131:TEST(babab, BasicAssertions){
+        1:  132:  BitArray arr = BitArray(5);
+       1*:  133:  EXPECT_EQ(arr[3], 0);
+        1:  134:  arr.set();
+       1*:  135:  EXPECT_EQ(arr[3], 1);
+        1:  136:  arr.set(3, false);
+       1*:  137:  EXPECT_EQ(arr[3], 0);
+        1:  138:}
+------------------
+_ZN26babab_BasicAssertions_TestC1Ev:
+function _ZN26babab_BasicAssertions_TestC1Ev called 1 returned 100% blocks executed 100%
+        1:  131:TEST(babab, BasicAssertions){
+        1:  131-block  0
+call    0 returned 1
+------------------
+_ZN26babab_BasicAssertions_TestD0Ev:
+function _ZN26babab_BasicAssertions_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  131:TEST(babab, BasicAssertions){
+        1:  131-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN26babab_BasicAssertions_TestD1Ev:
+function _ZN26babab_BasicAssertions_TestD1Ev called 1 returned 100% blocks executed 100%
+        1:  131:TEST(babab, BasicAssertions){
+        1:  131-block  0
+call    0 returned 1
+------------------
+_ZN26babab_BasicAssertions_Test8TestBodyEv:
+function _ZN26babab_BasicAssertions_Test8TestBodyEv called 1 returned 100% blocks executed 27%
+        1:  131:TEST(babab, BasicAssertions){
+        1:  132:  BitArray arr = BitArray(5);
+        1:  132-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  133:  EXPECT_EQ(arr[3], 0);
+        1:  133-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  133-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  133-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  133-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  133-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  133-block  5
+call   17 never executed
+call   18 never executed
+        1:  133-block  6
+call   19 returned 1
+    $$$$$:  133-block  7
+    $$$$$:  133-block  8
+    $$$$$:  133-block  9
+call   20 never executed
+    $$$$$:  133-block 10
+    $$$$$:  133-block 11
+call   21 never executed
+    $$$$$:  133-block 12
+    $$$$$:  133-block 13
+call   22 never executed
+        1:  134:  arr.set();
+call    0 returned 1
+       1*:  135:  EXPECT_EQ(arr[3], 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  135-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  135-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  135-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  135-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  135-block  4
+call   17 never executed
+call   18 never executed
+        1:  135-block  5
+call   19 returned 1
+    $$$$$:  135-block  6
+    $$$$$:  135-block  7
+    $$$$$:  135-block  8
+call   20 never executed
+    $$$$$:  135-block  9
+    $$$$$:  135-block 10
+call   21 never executed
+    $$$$$:  135-block 11
+    $$$$$:  135-block 12
+call   22 never executed
+        1:  136:  arr.set(3, false);
+call    0 returned 1
+       1*:  137:  EXPECT_EQ(arr[3], 0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  137-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  137-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  137-block  2
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:  137-block  3
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:  137-block  4
+call   17 never executed
+call   18 never executed
+        1:  137-block  5
+call   19 returned 1
+    $$$$$:  137-block  6
+    $$$$$:  137-block  7
+    $$$$$:  137-block  8
+call   20 never executed
+    $$$$$:  137-block  9
+    $$$$$:  137-block 10
+call   21 never executed
+    $$$$$:  137-block 11
+    $$$$$:  137-block 12
+call   22 never executed
+        1:  138:}
+call    0 returned 1
+    $$$$$:  138-block  0
+call    1 never executed
+------------------

@@ -3,6 +3,8 @@
 
 #include <string>
 
+#define type_size 8
+
 class BitArray
 {
  public:
@@ -11,7 +13,7 @@ class BitArray
 
   //Конструирует массив, хранящий заданное количество бит.
   //Первые sizeof(long) бит можно инициализровать с помощью параметра value.
-  explicit BitArray(int num_bits, unsigned long value = 0);
+  explicit BitArray(int num_bits, unsigned char value = 0);
   BitArray(const BitArray& b);
 
 
@@ -75,12 +77,17 @@ class BitArray
   std::string to_string() const;
 
  private:
-  const double resizing_rate = 1.7;
+  const int resizing_rate = 2;
 
   size_t _capacity;
   size_t _cur_size;
 
-  unsigned long* _array;
+  unsigned char* _array;
+
+  static unsigned char mask(size_t pos){
+    unsigned char one = 1;
+    return one << (7 - (pos % type_size));
+  };
 
 };
 
