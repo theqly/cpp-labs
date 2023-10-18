@@ -1,7 +1,7 @@
 #include "bitarray.h"
 
 int main(){
-  /*BitArray arr1 = BitArray(8);
+  BitArray arr1 = BitArray(8);
   BitArray arr2 = BitArray(8);
   arr1.reset();
   arr2.set();
@@ -11,15 +11,14 @@ int main(){
   for(size_t i = 0; i < 8; ++i){
     printf("%d", arr2[i]);
   }
+  printf("\n");
   arr2 &= arr1;
   for(size_t i = 0; i < 8; ++i){
     printf("%d", arr2[i]);
-  }*/
-  BitArray arr1 = BitArray(8);
-  arr1.set(3, true);
-  arr1.set(4, true);
-  arr1.set(5, true);
-  std::string str1 = arr1.to_string();
-  std::string str2 = "00011100";
+  }
+  printf("\n");
+  printf("%d", arr2[3]);
+  printf("%d", arr2[3]);
+  printf("%d", arr2[3]);
   return 0;
 }

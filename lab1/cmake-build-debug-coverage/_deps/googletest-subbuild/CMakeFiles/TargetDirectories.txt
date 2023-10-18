@@ -1,3 +1,0 @@
-D:/programming/projects/cpp-labs/lab1/cmake-build-debug-coverage/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
-D:/programming/projects/cpp-labs/lab1/cmake-build-debug-coverage/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-D:/programming/projects/cpp-labs/lab1/cmake-build-debug-coverage/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
