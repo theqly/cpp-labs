@@ -1,2 +1,6 @@
 cmake-build-debug
+<<<<<<< HEAD
 cmake-build-debug-coverage
+=======
+cmake-build-debug-coverage
+>>>>>>> ff7f2a8caf890d2b52f0b17ad5ca23cbf04e8d6e

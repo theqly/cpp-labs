@@ -60,6 +60,7 @@ void BitArray::resize(int num_bits, bool value){
   size_t new_capacity;
   if(num_bits % type_size == 0) new_capacity = num_bits;
   else new_capacity = num_bits + (type_size-(num_bits % type_size));
+  //free array
   auto tmp = new unsigned char[new_capacity / type_size];
   for(size_t i = 0; i != _capacity / type_size; ++i){
     tmp[i] = _array[i];
@@ -90,15 +91,17 @@ void BitArray::push_back(bool bit){
 }
 
 BitArray& BitArray::operator&=(const BitArray& b){
-  auto tmp = new unsigned char[b._capacity / type_size];
+    if(_cur_size != b._cur_size) throw std::bad_array_new_length();
+  //auto tmp = new unsigned char[b._capacity / type_size];
+  //free again
   for(size_t i = 0; i < b._capacity / type_size; ++i){
-    tmp[i] &= b._array[i];
+    _array[i] &= b._array[i];
   }
-  _array = std::move(tmp);
   return *this;
 }
 
 BitArray& BitArray::operator|=(const BitArray& b){
+    if(_cur_size != b._cur_size) throw std::bad_array_new_length();
   auto tmp = new unsigned char[b._capacity / type_size];
   for(size_t i = 0; i < b._capacity / type_size; ++i){
     tmp[i] |= b._array[i];
@@ -108,6 +111,7 @@ BitArray& BitArray::operator|=(const BitArray& b){
 }
 
 BitArray& BitArray::operator^=(const BitArray& b){
+    if(_cur_size != b._cur_size) throw std::bad_array_new_length();
   auto tmp = new unsigned char[b._capacity / type_size];
   for(size_t i = 0; i < b._capacity / type_size; ++i){
     tmp[i] ^= b._array[i];
@@ -133,6 +137,7 @@ BitArray BitArray::operator>>(int n) const{
 
 //Устанавливает бит с индексом n в значение val.
 BitArray& BitArray::set(int n, bool val){
+    if(n > _capacity) throw std::bad_array_new_length();
   if(val) _array[n / type_size] |= mask(n);
   else _array[n / type_size] &= ~mask(n);
   return *this;
@@ -147,6 +152,7 @@ BitArray& BitArray::set(){
 
 //Устанавливает бит с индексом n в значение false.
 BitArray& BitArray::reset(int n){
+    if(n > _capacity) throw std::bad_array_new_length();
   set(n, false);
   return *this;
 }

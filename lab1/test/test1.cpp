@@ -77,7 +77,10 @@ TEST(BitAnd, BitOperators){
   }
   arr1.set(3, true);
   arr2.set();
+  printf("%d", arr2[3]);
   arr2 &= arr1;
+  printf("%d", arr1[3]);
+  printf("%d", arr2[3]);
   EXPECT_EQ(arr2[3], 1); //WHY FALSE
   EXPECT_EQ(arr2[2], 0);
 }
