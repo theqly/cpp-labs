@@ -1,7 +1,7 @@
 # Distributed under the OSI-approved BSD 3-Clause License.  See accompanying
 # file Copyright.txt or https://cmake.org/licensing for details.
 
-cmake_minimum_required(VERSION 3.20.2)
+cmake_minimum_required(VERSION 3.26.4)
 
 # We name the project and the target for the ExternalProject_Add() call
 # to something that will highlight to the user what we are working on if
@@ -13,15 +13,16 @@ project(googletest-populate NONE)
 
 include(ExternalProject)
 ExternalProject_Add(googletest-populate
-                     "UPDATE_DISCONNECTED" "False" "URL" "https://github.com/google/googletest/archive/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip"
-                    SOURCE_DIR          "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-src"
-                    BINARY_DIR          "C:/Users/a.gaan/Desktop/cpp-labs/cpp-labs/lab0/lab0b/cmake-build-debug/_deps/googletest-build"
+                     "UPDATE_DISCONNECTED" "False" "DOWNLOAD_EXTRACT_TIMESTAMP" "TRUE" "URL" "https://github.com/google/googletest/archive/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip"
+                    SOURCE_DIR          "/home/denis/CLionProjects/theqly_nsu_oop_labs/lab0/lab0b/cmake-build-debug/_deps/googletest-src"
+                    BINARY_DIR          "/home/denis/CLionProjects/theqly_nsu_oop_labs/lab0/lab0b/cmake-build-debug/_deps/googletest-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""
                     TEST_COMMAND        ""
                     USES_TERMINAL_DOWNLOAD  YES
                     USES_TERMINAL_UPDATE    YES
+                    USES_TERMINAL_PATCH     YES
 )
 
 

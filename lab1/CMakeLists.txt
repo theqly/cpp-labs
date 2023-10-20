@@ -13,6 +13,7 @@ add_executable(${exe_name} ${SRC})
 target_include_directories(lab1 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
+#[[
 include(FetchContent)
 FetchContent_Declare(
         googletest
@@ -20,6 +21,20 @@ FetchContent_Declare(
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
+]]
+
+find_package(GTest)
+if (NOT GTest_FOUND)
+    include(FetchContent)
+
+    FetchContent_Declare(
+            googletest
+            GIT_REPOSITORY https://github.com/google/googletest.git
+            GIT_TAG release-1.11.0
+    )
+    FetchContent_MakeAvailable(googletest)
+endif ()
+
 
 add_executable(lab1_test test/test1.cpp)
 target_include_directories(lab1_test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)

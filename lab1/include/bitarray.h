@@ -3,22 +3,20 @@
 
 #include <string>
 
-#define type_size 8
 
-class BitArray
-{
- public:
+class BitArray {
+public:
   BitArray();
   ~BitArray();
 
-  explicit BitArray(int num_bits, unsigned char value = 0);
+  explicit BitArray(size_t num_bits, unsigned char value = 0);
   BitArray(const BitArray& b);
 
   void swap(BitArray& b);
 
   BitArray& operator=(const BitArray& b);
 
-  void resize(int num_bits);
+  void resize(size_t num_bits);
 
   void clear();
 
@@ -33,7 +31,7 @@ class BitArray
   BitArray operator<<(int n) const;
   BitArray operator>>(int n) const;
 
-  BitArray& set(int n, bool val = true);
+  BitArray& set(size_t n, bool val = true);
 
   BitArray& set();
 
@@ -47,35 +45,29 @@ class BitArray
 
   BitArray operator~() const;
 
-  [[nodiscard]] int count() const;
+  [[nodiscard]] size_t count() const;
 
-  bool operator[](int i) const;
+  bool operator[](size_t i) const;
 
-  [[nodiscard]] int size() const;
+  [[nodiscard]] size_t size() const;
   [[nodiscard]] bool empty() const;
 
   [[nodiscard]] std::string to_string() const;
 
-  friend bool operator==(const BitArray & a, const BitArray & b);
-  friend bool operator!=(const BitArray & a, const BitArray & b);
+  friend bool operator==(const BitArray& a, const BitArray& b);
+  friend bool operator!=(const BitArray& a, const BitArray& b);
 
   friend BitArray operator&(const BitArray& b1, const BitArray& b2);
   friend BitArray operator|(const BitArray& b1, const BitArray& b2);
   friend BitArray operator^(const BitArray& b1, const BitArray& b2);
 
- private:
+private:
   const int resizing_rate = 2;
 
   size_t _capacity;
   size_t _cur_size;
 
-  unsigned char* _array;
-
-  static unsigned char mask(size_t pos){
-    unsigned char one = 1;
-    return one << (7 - (pos % type_size));
-  };
-
+  unsigned char *_array;
 };
 
-#endif //LAB1
+#endif// LAB1
