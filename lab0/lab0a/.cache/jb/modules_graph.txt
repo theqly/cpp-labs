@@ -1,0 +1,6 @@
+4
+0
+{"Hash":"","Name":"","Path":"/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module2.cpp"}
+{"Hash":"","Name":"","Path":"/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module1.cpp"}
+{"Hash":"","Name":"","Path":"/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module3.cpp"}
+{"Hash":"","Name":"","Path":"/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/main.cpp"}

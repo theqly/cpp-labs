@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/build",
+  "command": "/usr/bin/c++    -o CMakeFiles/lab0a.dir/main.cpp.o -c /home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/main.cpp",
+  "file": "/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/main.cpp"
+},
+{
+  "directory": "/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/build",
+  "command": "/usr/bin/c++    -o CMakeFiles/lab0a.dir/module1.cpp.o -c /home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module1.cpp",
+  "file": "/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module1.cpp"
+},
+{
+  "directory": "/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/build",
+  "command": "/usr/bin/c++    -o CMakeFiles/lab0a.dir/module2.cpp.o -c /home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module2.cpp",
+  "file": "/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module2.cpp"
+},
+{
+  "directory": "/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/build",
+  "command": "/usr/bin/c++    -o CMakeFiles/lab0a.dir/module3.cpp.o -c /home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module3.cpp",
+  "file": "/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/module3.cpp"
+}
+]
