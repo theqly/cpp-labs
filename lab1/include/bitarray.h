@@ -3,100 +3,102 @@
 
 #include <string>
 
-#define type_size 8
+/*
+class BitArrayIterator {
+public:
+  BitArrayIterator(unsigned char *ptr, size_t current_bit = 0);
 
-class BitArray
-{
- public:
-  BitArray();
-  ~BitArray();
+private:
+  unsigned char *_m_ptr;
+  size_t _current_bit;
+};*/
 
-  //Конструирует массив, хранящий заданное количество бит.
-  //Первые sizeof(long) бит можно инициализровать с помощью параметра value.
-  explicit BitArray(int num_bits, unsigned char value = 0);
-  BitArray(const BitArray& b);
-
-
-  //Обменивает значения двух битовых массивов.
-  void swap(BitArray& b);
-
-  BitArray& operator=(const BitArray& b);
-
-
-  //Изменяет размер массива. В случае расширения, новые элементы
-  //инициализируются значением value.
-  void resize(int num_bits, bool value = false);
-  //Очищает массив.
-  void clear();
-  //Добавляет новый бит в конец массива. В случае необходимости
-  //происходит перераспределение памяти.
-  void push_back(bool bit);
-
-
-  //Битовые операции над массивами.
-  //Работают только на массивах одинакового размера.
-  //Обоснование реакции на параметр неверного размера входит в задачу.
-  BitArray& operator&=(const BitArray& b);
-  BitArray& operator|=(const BitArray& b);
-  BitArray& operator^=(const BitArray& b);
-
-  //Битовый сдвиг с заполнением нулями.
-  BitArray& operator<<=(int n);
-  BitArray& operator>>=(int n);
-  BitArray operator<<(int n) const;
-  BitArray operator>>(int n) const;
-
-
-  //Устанавливает бит с индексом n в значение val.
-  BitArray& set(int n, bool val = true);
-  //Заполняет массив истиной.
-  BitArray& set();
-
-  //Устанавливает бит с индексом n в значение false.
-  BitArray& reset(int n);
-  //Заполняет массив ложью.
-  BitArray& reset();
-
-  //true, если массив содержит истинный бит.
-  bool any() const;
-  //true, если все биты массива ложны.
-  bool none() const;
-  //Битовая инверсия
-  BitArray operator~() const;
-  //Подсчитывает количество единичных бит.
-  int count() const;
-
-
-  //Возвращает значение бита по индексу i.
-  bool operator[](int i) const;
-
-  int size() const;
-  bool empty() const;
-
-  //Возвращает строковое представление массива.
-  std::string to_string() const;
-
- private:
+class BitArray {
+private:
   const int resizing_rate = 2;
 
   size_t _capacity;
   size_t _cur_size;
 
-  unsigned char* _array;
+  unsigned char *_array;
 
-  static unsigned char mask(size_t pos){
-    unsigned char one = 1;
-    return one << (7 - (pos % type_size));
+public:
+  class Iterator {
+  public:
+    Iterator(const BitArray& tmp, size_t arrayIndex, size_t bitIndex);
+    Iterator& operator=(const Iterator& otherIterator) = default;
+    bool operator==(const Iterator& otherIterator) const;
+    bool operator!=(const Iterator& otherIterator)const;
+    Iterator& operator++();
+    Iterator& operator=(const bool& bitValue);
+
+  private:
+    unsigned char *_array;
+    size_t _arrayIndex;
+    size_t _bitIndex;
+    size_t _cur_array_size;
   };
 
+  BitArray();
+  ~BitArray();
+
+  explicit BitArray(int num_bits, unsigned char value = 0);
+  BitArray(const BitArray& b);
+
+  void swap(BitArray& b);
+
+  BitArray& operator=(const BitArray& b);
+
+  void resize(int num_bits);
+
+  void clear();
+
+  void push_back(bool bit);
+
+  BitArray& operator&=(const BitArray& b);
+  BitArray& operator|=(const BitArray& b);
+  BitArray& operator^=(const BitArray& b);
+
+  BitArray& operator<<=(int n);
+  BitArray& operator>>=(int n);
+  BitArray operator<<(int n) const;
+  BitArray operator>>(int n) const;
+
+  BitArray& set(int n, bool val = true);
+
+  BitArray& set();
+
+  BitArray& reset(int n);
+
+  BitArray& reset();
+
+  [[nodiscard]] bool any() const;
+
+  [[nodiscard]] bool none() const;
+
+  BitArray operator~() const;
+
+  [[nodiscard]] int count() const;
+
+  bool operator[](int i) const;
+
+  [[nodiscard]] int size() const;
+  [[nodiscard]] bool empty() const;
+
+  [[nodiscard]] std::string to_string() const;
+
+  friend bool operator==(const BitArray& a, const BitArray& b);
+  friend bool operator!=(const BitArray& a, const BitArray& b);
+
+  friend BitArray operator&(const BitArray& b1, const BitArray& b2);
+  friend BitArray operator|(const BitArray& b1, const BitArray& b2);
+  friend BitArray operator^(const BitArray& b1, const BitArray& b2);
+
+
+  [[nodiscard]] Iterator begin() const;
+
+  [[nodiscard]] Iterator end() const;
 };
 
-bool operator==(const BitArray & a, const BitArray & b);
-bool operator!=(const BitArray & a, const BitArray & b);
 
-BitArray operator&(const BitArray& b1, const BitArray& b2);
-BitArray operator|(const BitArray& b1, const BitArray& b2);
-BitArray operator^(const BitArray& b1, const BitArray& b2);
-
-
-#endif //LAB1
+#endif// LAB1

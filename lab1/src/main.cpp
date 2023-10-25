@@ -1,24 +1,15 @@
+#include <iostream>
 #include "bitarray.h"
 
-int main(){
-  BitArray arr1 = BitArray(8);
-  BitArray arr2 = BitArray(8);
-  arr1.reset();
-  arr2.set();
-  arr2 &= arr1;
-  arr1.set(3, true);
-  arr2.set();
-  for(size_t i = 0; i < 8; ++i){
-    printf("%d", arr2[i]);
+int main() {
+  BitArray arr1 = BitArray(16);
+  arr1.set();
+  bool assigment = false;
+  const auto itEnd = arr1.end();
+  for( auto it = arr1.begin(); it != itEnd; ++it ) {
+    it = assigment;
+    assigment = !assigment;
   }
-  printf("\n");
-  arr2 &= arr1;
-  for(size_t i = 0; i < 8; ++i){
-    printf("%d", arr2[i]);
-  }
-  printf("\n");
-  printf("%d", arr2[3]);
-  printf("%d", arr2[3]);
-  printf("%d", arr2[3]);
+  std::cout << arr1.to_string();
   return 0;
 }

@@ -168,7 +168,7 @@ GMOCK_DECLARE_KIND_(long double, kFloatingPoint);
 template <TypeKind kFromKind, typename From, TypeKind kToKind, typename To>
 using LosslessArithmeticConvertibleImpl = std::integral_constant<
     bool,
-    // clang-format off
+    // .clang-format off
       // Converting from bool is always lossless
       (kFromKind == kBool) ? true
       // Converting between any other type kinds will be lossy if the type
@@ -188,7 +188,7 @@ using LosslessArithmeticConvertibleImpl = std::integral_constant<
       // as wide as `From`.
     : (kFromKind == kFloatingPoint && (sizeof(From) <= sizeof(To))) ? true
     : false
-    // clang-format on
+    // .clang-format on
     >;
 
 // LosslessArithmeticConvertible<From, To>::value is true if and only if

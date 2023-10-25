@@ -3698,13 +3698,13 @@ TEST(ExpectTest, ASSERT_EQ_Double) {
 // Tests ASSERT_EQ.
 TEST(AssertionTest, ASSERT_EQ) {
   ASSERT_EQ(5, 2 + 3);
-  // clang-format off
+  // .clang-format off
   EXPECT_FATAL_FAILURE(ASSERT_EQ(5, 2*3),
                        "Expected equality of these values:\n"
                        "  5\n"
                        "  2*3\n"
                        "    Which is: 6");
-  // clang-format on
+  // .clang-format on
 }
 
 // Tests ASSERT_EQ(NULL, pointer).
@@ -4414,14 +4414,14 @@ TEST(ExpectTest, ExpectFalseWithAssertionResult) {
 // Tests EXPECT_EQ.
 TEST(ExpectTest, EXPECT_EQ) {
   EXPECT_EQ(5, 2 + 3);
-  // clang-format off
+  // .clang-format off
   EXPECT_NONFATAL_FAILURE(EXPECT_EQ(5, 2*3),
                           "Expected equality of these values:\n"
                           "  5\n"
                           "  2*3\n"
                           "    Which is: 6");
   EXPECT_NONFATAL_FAILURE(EXPECT_EQ(5, 2 - 3), "2 - 3");
-  // clang-format on
+  // .clang-format on
 }
 
 // Tests using EXPECT_EQ on double values.  The purpose is to make
@@ -5277,7 +5277,7 @@ TEST_F(TestInfoTest, result) {
   EXPECT_STREQ(__FILE__, test_info->file());                                \
   EXPECT_EQ(expected_line, test_info->line())
 
-// clang-format off
+// .clang-format off
 TEST(CodeLocationForTEST, Verify) {
   VERIFY_CODE_LOCATION;
 }
@@ -5319,7 +5319,7 @@ REGISTER_TYPED_TEST_SUITE_P(CodeLocationForTYPEDTESTP, Verify);
 INSTANTIATE_TYPED_TEST_SUITE_P(My, CodeLocationForTYPEDTESTP, int);
 
 #undef VERIFY_CODE_LOCATION
-// clang-format on
+// .clang-format on
 
 // Tests setting up and tearing down a test case.
 // Legacy API is deprecated but still available

@@ -67,22 +67,151 @@ TEST(Pushing, Pushing){
 }
 
 TEST(BitAnd, BitOperators){
-  BitArray arr1 = BitArray(8);
-  BitArray arr2 = BitArray(8);
+  BitArray arr1 = BitArray(24);
+  BitArray arr2 = BitArray(24);
   arr1.reset();
   arr2.set();
   arr2 &= arr1;
-  for(size_t i = 0; i < 8; ++i){
+  for(size_t i = 0; i < 24; ++i){
     EXPECT_EQ(arr2[i], 0);
   }
   arr1.set(3, true);
+  arr1.set(13, true);
+  arr1.set(16, true);
+  arr1.set(20, true);
+  arr1.set(23, true);
   arr2.set();
-  printf("%d", arr2[3]);
   arr2 &= arr1;
-  printf("%d", arr1[3]);
-  printf("%d", arr2[3]);
-  EXPECT_EQ(arr2[3], 1); //WHY FALSE
+  EXPECT_EQ(arr2[3], 1);
+  EXPECT_EQ(arr2[13], 1);
+  EXPECT_EQ(arr2[16], 1);
+  EXPECT_EQ(arr2[20], 1);
+  EXPECT_EQ(arr2[23], 1);
+}
+
+TEST(BitOr, BitOperators){
+  BitArray arr1 = BitArray(24);
+  BitArray arr2 = BitArray(24);
+  arr1.reset();
+  arr2.set();
+  arr2 |= arr1;
+  for(size_t i = 0; i < 24; ++i){
+    EXPECT_EQ(arr2[i], 1);
+  }
+  arr1.set(3, true);
+  arr1.set(13, true);
+  arr1.set(16, true);
+  arr1.set(20, true);
+  arr1.set(23, true);
+  arr2 |= arr1;
+  EXPECT_EQ(arr2[3], 1);
+  EXPECT_EQ(arr2[13], 1);
+  EXPECT_EQ(arr2[16], 1);
+  EXPECT_EQ(arr2[20], 1);
+  EXPECT_EQ(arr2[23], 1);
+}
+
+TEST(BitXor, BitOperators){
+  BitArray arr1 = BitArray(24);
+  BitArray arr2 = BitArray(24);
+  arr1.reset();
+  arr2.set();
+  arr2 ^= arr1;
+  for(size_t i = 0; i < 24; ++i){
+    EXPECT_EQ(arr2[i], 1);
+  }
+  arr1.set(3, true);
+  arr1.set(13, true);
+  arr1.set(16, true);
+  arr1.set(20, true);
+  arr1.set(23, true);
+  arr2.reset();
+  arr2 ^= arr1;
   EXPECT_EQ(arr2[2], 0);
+  EXPECT_EQ(arr2[3], 1);
+  EXPECT_EQ(arr2[4], 0);
+  EXPECT_EQ(arr2[12], 0);
+  EXPECT_EQ(arr2[13], 1);
+  EXPECT_EQ(arr2[14], 0);
+  EXPECT_EQ(arr2[15], 0);
+  EXPECT_EQ(arr2[16], 1);
+  EXPECT_EQ(arr2[17], 0);
+  EXPECT_EQ(arr2[19], 0);
+  EXPECT_EQ(arr2[20], 1);
+  EXPECT_EQ(arr2[21], 0);
+  EXPECT_EQ(arr2[22], 0);
+  EXPECT_EQ(arr2[23], 1);
+}
+
+TEST(SelfBitLeftShift, BitShifts){
+  BitArray arr1 = BitArray(24);
+  arr1.set();
+  arr1.set(20, false);
+  arr1 <<= 16;
+  EXPECT_EQ(arr1[7], 1);
+  EXPECT_EQ(arr1[8], 0);
+  EXPECT_EQ(arr1[4], 0);
+  arr1.reset();
+  arr1.set(8, true);
+  arr1.set(11, true);
+  arr1.set(20, true);
+  arr1 <<= 8;
+  EXPECT_EQ(arr1[0], 1);
+  EXPECT_EQ(arr1[3], 1);
+  EXPECT_EQ(arr1[12], 1);
+}
+
+TEST(SelfBitRightShift, BitShifts){
+  BitArray arr1 = BitArray(24);
+  arr1.set();
+  arr1.set(4, false);
+  arr1 >>= 16;
+  EXPECT_EQ(arr1[16], 1);
+  EXPECT_EQ(arr1[17], 1);
+  EXPECT_EQ(arr1[15], 0);
+  EXPECT_EQ(arr1[20], 0);
+  arr1.reset();
+  arr1.set(4, true);
+  arr1.set(7, true);
+  arr1 >>= 8;
+  EXPECT_EQ(arr1[12], 1);
+  EXPECT_EQ(arr1[15], 1);
+}
+
+TEST(BitRightShift, BitShifts){
+  BitArray arr1 = BitArray(32);
+  arr1.reset();
+  arr1.set(0, true);
+  arr1.set(5, true);
+  arr1.set(12, true);
+  arr1.set(15, true);
+  BitArray arr2 = arr1 >> 16;
+  EXPECT_EQ(arr2[0], 0);
+  EXPECT_EQ(arr2[5], 0);
+  EXPECT_EQ(arr2[12], 0);
+  EXPECT_EQ(arr2[15], 0);
+  EXPECT_EQ(arr2[16], 1);
+  EXPECT_EQ(arr2[21], 1);
+  EXPECT_EQ(arr2[28], 1);
+  EXPECT_EQ(arr2[31], 1);
+}
+
+TEST(BitLeftShift, BitShifts){
+  BitArray arr1 = BitArray(32);
+  arr1.reset();
+  arr1.set(31, true);
+  arr1.set(28, true);
+  arr1.set(21, true);
+  arr1.set(16, true);
+  BitArray arr2 = arr1 << 16;
+  EXPECT_EQ(arr2[0], 1);
+  EXPECT_EQ(arr2[5], 1);
+  EXPECT_EQ(arr2[12], 1);
+  EXPECT_EQ(arr2[15], 1);
+  EXPECT_EQ(arr2[16], 0);
+  EXPECT_EQ(arr2[21], 0);
+  EXPECT_EQ(arr2[28], 0);
+  EXPECT_EQ(arr2[31], 0);
 }
 
 TEST(Any, Any){
@@ -131,11 +260,22 @@ TEST(To_string, To_string){
   EXPECT_TRUE(str1 == str2 || str2 == str1);
 }
 
-TEST(babab, BasicAssertions){
-  BitArray arr = BitArray(5);
-  EXPECT_EQ(arr[3], 0);
-  arr.set();
-  EXPECT_EQ(arr[3], 1);
-  arr.set(3, false);
-  EXPECT_EQ(arr[3], 0);
+TEST(Equal, Friends){
+  BitArray arr1 = BitArray(16);
+  BitArray arr2 = BitArray(16);
+  arr1.reset();
+  arr2.reset();
+  EXPECT_TRUE(arr1 == arr2);
+  arr1.push_back(true);
+  EXPECT_FALSE(arr1 == arr2);
+  arr2.push_back(true);
+  EXPECT_TRUE(arr1 == arr2);
+}
+
+TEST(Iterator, Iterator){
+  BitArray arr1(16);
+  arr1.set();
+  for(bool bit : arr1){
+
+  }
 }
