@@ -35,7 +35,7 @@
 //
 // This program will be invoked from a Python unit test.  Don't run it
 // directly.
-// clang-format off
+// .clang-format off
 
 #include "gtest/gtest.h"
 
@@ -192,4 +192,4 @@ int main(int argc, char** argv) {
   return RUN_ALL_TESTS();
 }
 
-// clang-format on
+// .clang-format on

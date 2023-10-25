@@ -1,5 +1,5 @@
-#include "bitarray.h"
 #include <iostream>
+#include "bitarray.h"
 
 int main() {
   BitArray arr1 = BitArray(16);
@@ -10,6 +10,6 @@ int main() {
     it = assigment;
     assigment = !assigment;
   }
-  std::cout<< arr1.to_string();
+  std::cout << arr1.to_string();
   return 0;
 }
