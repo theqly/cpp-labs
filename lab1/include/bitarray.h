@@ -3,19 +3,42 @@
 
 #include <string>
 
-
+/*
 class BitArrayIterator {
- public:
-  BitArrayIterator(unsigned char* ptr, size_t current_bit = 0);
+public:
+  BitArrayIterator(unsigned char *ptr, size_t current_bit = 0);
 
- private:
-  unsigned char* _m_ptr;
+private:
+  unsigned char *_m_ptr;
   size_t _current_bit;
-};
+};*/
 
-class BitArray
-{
- public:
+class BitArray {
+private:
+  const int resizing_rate = 2;
+
+  size_t _capacity;
+  size_t _cur_size;
+
+  unsigned char *_array;
+
+public:
+  class Iterator {
+  public:
+    Iterator(const BitArray& tmp, size_t arrayIndex, size_t bitIndex);
+    Iterator& operator=(const Iterator& otherIterator) = default;
+    bool operator==(const Iterator& otherIterator) const;
+    bool operator!=(const Iterator& otherIterator)const;
+    Iterator& operator++();
+    Iterator& operator=(const bool& bitValue);
+
+  private:
+    unsigned char *_array;
+    size_t _arrayIndex;
+    size_t _bitIndex;
+    size_t _cur_array_size;
+  };
+
   BitArray();
   ~BitArray();
 
@@ -64,28 +87,18 @@ class BitArray
 
   [[nodiscard]] std::string to_string() const;
 
-  friend bool operator==(const BitArray & a, const BitArray & b);
-  friend bool operator!=(const BitArray & a, const BitArray & b);
+  friend bool operator==(const BitArray& a, const BitArray& b);
+  friend bool operator!=(const BitArray& a, const BitArray& b);
 
   friend BitArray operator&(const BitArray& b1, const BitArray& b2);
   friend BitArray operator|(const BitArray& b1, const BitArray& b2);
   friend BitArray operator^(const BitArray& b1, const BitArray& b2);
 
 
-  [[nodiscard]] BitArrayIterator begin() const;
+  [[nodiscard]] Iterator begin() const;
 
-  [[nodiscard]] BitArrayIterator end() const;
-
- private:
-
-  const int resizing_rate = 2;
-
-  size_t _capacity;
-  size_t _cur_size;
-
-  unsigned char* _array;
-
+  [[nodiscard]] Iterator end() const;
 };
 
 
-#endif //LAB1
+#endif// LAB1
