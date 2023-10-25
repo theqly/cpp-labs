@@ -309,39 +309,38 @@ BitArray operator^(const BitArray& b1, const BitArray& b2) {
   return tmp ^= b2;
 }
 
-BitArray::Iterator BitArray::begin() const {
-  return BitArray::Iterator{*this, 0, 0};
+BitArray::Iterator BitArray::begin() {
+  return BitArray::Iterator{this, 0};
 }
 
-BitArray::Iterator BitArray::end() const {
-  return BitArray::Iterator{*this, this->_cur_size / type_size, this->_cur_size % type_size};
+BitArray::Iterator BitArray::end() {
+  return BitArray::Iterator{this, this->_cur_size};
 }
 
-BitArray::Iterator::Iterator(const BitArray& tmp, size_t arrayIndex, size_t bitIndex)
-    : _array(tmp._array)
-    , _arrayIndex(arrayIndex)
-    , _bitIndex(bitIndex)
-    , _cur_array_size(tmp._cur_size) {
+BitArray::Iterator::Iterator(BitArray* tmp, size_t index){
+  _BitArray = tmp;
+  _cur_index = index;
 }
 
 BitArray::Iterator& BitArray::Iterator::operator++() {
-  _bitIndex++;
-  _arrayIndex += (_bitIndex / type_size);
-  _bitIndex %= type_size;
+  _cur_index++;
   return *this;
 }
 
-BitArray::Iterator& BitArray::Iterator::operator=(const bool& bitValue) {
-  _array[_arrayIndex] &= (~mask(_bitIndex));
-  _array[_arrayIndex] |= (bitValue << (type_size - 1 - (_bitIndex % type_size)));// & mask(_bitIndex);
+BitArray::Iterator& BitArray::Iterator::operator=(const bool& bit) {
+  _BitArray->set(static_cast<int>(_cur_index), bit);
   return *this;
 }
 
-bool BitArray::Iterator::operator==(const BitArray::Iterator& otherIterator) const {
-  return this->_bitIndex == otherIterator._bitIndex && this->_arrayIndex == otherIterator._arrayIndex
-      && this->_cur_array_size == otherIterator._cur_array_size;
+bool BitArray::Iterator::operator==(const BitArray::Iterator& other) const {
+  return this->_BitArray == other._BitArray && this->_cur_index == other._cur_index;
 }
 
 bool BitArray::Iterator::operator!=(const BitArray::Iterator& otherIterator) const {
   return !(*this == otherIterator);
+}
+
+bool BitArray::Iterator::operator*() {
+  BitArray tmp = *(this->_BitArray);
+  return (tmp[static_cast<int>(_cur_index)] != 0);
 }

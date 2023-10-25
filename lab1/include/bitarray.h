@@ -3,16 +3,6 @@
 
 #include <string>
 
-/*
-class BitArrayIterator {
-public:
-  BitArrayIterator(unsigned char *ptr, size_t current_bit = 0);
-
-private:
-  unsigned char *_m_ptr;
-  size_t _current_bit;
-};*/
-
 class BitArray {
 private:
   const int resizing_rate = 2;
@@ -25,18 +15,17 @@ private:
 public:
   class Iterator {
   public:
-    Iterator(const BitArray& tmp, size_t arrayIndex, size_t bitIndex);
-    Iterator& operator=(const Iterator& otherIterator) = default;
-    bool operator==(const Iterator& otherIterator) const;
-    bool operator!=(const Iterator& otherIterator)const;
+    Iterator(BitArray* tmp, size_t index);
+    Iterator& operator=(const Iterator& other) = default;
+    bool operator==(const Iterator& other) const;
+    bool operator!=(const Iterator& other) const;
     Iterator& operator++();
-    Iterator& operator=(const bool& bitValue);
+    Iterator& operator=(const bool& bit);
+    bool operator*();
 
   private:
-    unsigned char *_array;
-    size_t _arrayIndex;
-    size_t _bitIndex;
-    size_t _cur_array_size;
+    BitArray *_BitArray;
+    size_t _cur_index;
   };
 
   BitArray();
@@ -95,9 +84,9 @@ public:
   friend BitArray operator^(const BitArray& b1, const BitArray& b2);
 
 
-  [[nodiscard]] Iterator begin() const;
+  [[nodiscard]] Iterator begin();
 
-  [[nodiscard]] Iterator end() const;
+  [[nodiscard]] Iterator end();
 };
 
 
