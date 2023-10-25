@@ -1,6 +1,11 @@
 #include "bitarray.h"
 
-#define full_true 255
+const unsigned char full_true = 255;
+const size_t type_size = 8;
+
+static unsigned char mask(size_t pos) {
+  return 1 << (type_size - 1 - (pos % type_size));
+};
 
 BitArray::BitArray() : _capacity(0), _cur_size(0), _array(nullptr) {}
 
@@ -9,7 +14,7 @@ BitArray::~BitArray() {
 }
 
 BitArray::BitArray(int num_bits, unsigned char value) {
-  if (num_bits < 0) return;
+  if (num_bits < 0) throw std::bad_array_new_length();
   if (num_bits % type_size == 0) _capacity = num_bits;
   else _capacity = num_bits + (type_size - (num_bits % type_size));
   _cur_size = num_bits;
@@ -57,8 +62,9 @@ BitArray &BitArray::operator=(const BitArray &b) {
   return *this;
 }
 
-//доделать для num_bits < или == cur_size
 void BitArray::resize(int num_bits) {
+  if(num_bits < _cur_size) throw std::bad_array_new_length();
+  if(num_bits == _cur_size) return;
   size_t new_capacity;
   if (num_bits % type_size == 0) new_capacity = num_bits;
   else new_capacity = num_bits + (type_size - (num_bits % type_size));
@@ -116,30 +122,44 @@ BitArray &BitArray::operator^=(const BitArray &b) {
 }
 
 BitArray &BitArray::operator<<=(int n) {
-  if (n >= _cur_size) return reset();
-  else if(n <= 0) return *this;
   int byte_shift = n / type_size;
-  if(n % type_size != 0){
-    for(size_t i = _cur_size / type_size; i > 0; --i){
-
-    }
+  if (byte_shift >= _cur_size) return reset();
+  else if(n <= 0) return *this;
+  int module = n % type_size;
+  if(module != 0){
+    //i gave up
   } else {
-    for(size_t i = 0; i < _capacity / type_size - byte_shift; ++i){
+    for(size_t i = 0; i != _capacity / type_size - byte_shift; ++i){
       _array[i] = _array[i + byte_shift];
-      
+    }
+    for(size_t i = _capacity / type_size; byte_shift >= 0; --byte_shift){
+      _array[i - byte_shift] = 0;
     }
   }
   return *this;
 }
 BitArray &BitArray::operator>>=(int n) {
-  if (n >= _cur_size) return reset();
-
+  int byte_shift = n / type_size;
+  if (byte_shift >= _cur_size) return reset();
+  else if(n <= 0) return *this;
+  int module = n % type_size;
+  if(module != 0){
+    //i gave up
+  } else {
+    for(size_t i = _capacity / type_size - 1; i - byte_shift != -1; --i){ //WHAT AGAIN
+      _array[i] = _array[i - byte_shift];
+    }
+    for(size_t i = 0; i < byte_shift; ++i){
+      _array[i] = 0;
+    }
+  }
   return *this;
 }
 BitArray BitArray::operator<<(int n) const {
   BitArray tmp(*this);
   return tmp <<= n;
 }
+
 BitArray BitArray::operator>>(int n) const {
   BitArray tmp(*this);
   return tmp >>= n;
@@ -228,7 +248,11 @@ std::string BitArray::to_string() const {
 }
 
 bool operator==(const BitArray & a, const BitArray & b){
-  return (a._array == b._array);
+  if(a._cur_size != b._cur_size) return false;
+  for(int i = 0; i < a._cur_size; ++i){
+    if(a[i] != b[i]) return false;
+  }
+  return true;
 }
 
 bool operator!=(const BitArray & a, const BitArray & b){
@@ -249,3 +273,15 @@ BitArray operator^(const BitArray& b1, const BitArray& b2){
   BitArray tmp(b1);
   return tmp ^= b2;
 }
+
+BitArrayIterator::BitArrayIterator(unsigned char* ptr, size_t current_bit)
+: _m_ptr(ptr), _current_bit(current_bit) {}
+
+BitArrayIterator BitArray::begin() const {
+  return BitArrayIterator(_array);
+}
+
+BitArrayIterator BitArray::end() const {
+  return BitArrayIterator(_array + _capacity / type_size);
+}
+

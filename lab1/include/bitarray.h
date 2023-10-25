@@ -3,7 +3,15 @@
 
 #include <string>
 
-#define type_size 8
+
+class BitArrayIterator {
+ public:
+  BitArrayIterator(unsigned char* ptr, size_t current_bit = 0);
+
+ private:
+  unsigned char* _m_ptr;
+  size_t _current_bit;
+};
 
 class BitArray
 {
@@ -63,7 +71,13 @@ class BitArray
   friend BitArray operator|(const BitArray& b1, const BitArray& b2);
   friend BitArray operator^(const BitArray& b1, const BitArray& b2);
 
+
+  [[nodiscard]] BitArrayIterator begin() const;
+
+  [[nodiscard]] BitArrayIterator end() const;
+
  private:
+
   const int resizing_rate = 2;
 
   size_t _capacity;
@@ -71,11 +85,7 @@ class BitArray
 
   unsigned char* _array;
 
-  static unsigned char mask(size_t pos){
-    unsigned char one = 1;
-    return one << (7 - (pos % type_size));
-  };
-
 };
+
 
 #endif //LAB1
