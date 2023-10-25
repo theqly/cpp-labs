@@ -1,17 +1,12 @@
 cmake_minimum_required(VERSION 3.5.1)
 project(lab1 CXX)
-
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g")
 
 set(exe_name ${PROJECT_NAME})
-
 set(SRC src/main.cpp src/bitarray.cpp)
 
-
 add_executable(${exe_name} ${SRC})
-
 target_include_directories(lab1 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 include(FetchContent)

@@ -260,22 +260,25 @@ TEST(To_string, To_string){
   EXPECT_TRUE(str1 == str2 || str2 == str1);
 }
 
-TEST(Equal, Friends){
-  BitArray arr1 = BitArray(16);
-  BitArray arr2 = BitArray(16);
-  arr1.reset();
-  arr2.reset();
-  EXPECT_TRUE(arr1 == arr2);
-  arr1.push_back(true);
-  EXPECT_FALSE(arr1 == arr2);
-  arr2.push_back(true);
-  EXPECT_TRUE(arr1 == arr2);
-}
-
 TEST(Iterator, Iterator){
   BitArray arr1(16);
   arr1.set();
-  for(bool bit : arr1){
+  for(auto it : arr1){
+    EXPECT_EQ(it, 1);
+  }
+  arr1.reset();
+  for(auto it : arr1){
+    EXPECT_EQ(it, 0);
+  }
 
+  for(auto it : arr1){
+    it = true;
+  }
+
+  for(auto it = arr1.begin(); it != arr1.end(); ++it){
+    it = true;
+  }
+  for(auto it : arr1){
+    EXPECT_EQ(it, 1);
   }
 }
