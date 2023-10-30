@@ -257,6 +257,12 @@ bool BitArray::operator[](int i) const {
   return (mask(i) & _array[i / 8]) != 0;
 }
 
+BitArray::Iterator BitArray::operator[](int i){
+  if( i > _cur_size )
+    throw std::bad_array_new_length();
+  return {this, static_cast<size_t>(i)};
+}
+
 int BitArray::size() const {
   return (int)_cur_size;
 }
