@@ -70,6 +70,7 @@ public:
   [[nodiscard]] int count() const;
 
   bool operator[](int i) const;
+  bool operator[](int i);
 
   [[nodiscard]] int size() const;
   [[nodiscard]] bool empty() const;

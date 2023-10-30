@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.5.1)
 project(lab1 CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 set(exe_name ${PROJECT_NAME})
 set(SRC src/main.cpp src/bitarray.cpp)
 
