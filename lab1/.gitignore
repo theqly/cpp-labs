@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 cmake-build-debug
 <<<<<<< HEAD
 cmake-build-debug-coverage
@@ -5,3 +6,12 @@ cmake-build-debug-coverage
 cmake-build-debug-coverage
 >>>>>>> ff7f2a8caf890d2b52f0b17ad5ca23cbf04e8d6e
 cmake-build-debug-mingw-clang
+=======
+cmake-build-debug
+<<<<<<< HEAD
+cmake-build-debug-coverage
+=======
+cmake-build-debug-coverage
+>>>>>>> ff7f2a8caf890d2b52f0b17ad5ca23cbf04e8d6e
+build
+>>>>>>> d79e4b81c62502c0f6f794f017bad8dd3bdc4b99

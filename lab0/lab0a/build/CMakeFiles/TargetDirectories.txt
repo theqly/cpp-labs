@@ -1,0 +1,3 @@
+/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/build/CMakeFiles/lab0a.dir
+/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/build/CMakeFiles/edit_cache.dir
+/home/whoistheql/programming/projects/cpp-labs/lab0/lab0a/build/CMakeFiles/rebuild_cache.dir
