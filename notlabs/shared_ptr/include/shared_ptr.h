@@ -5,7 +5,7 @@
 template<class T>
 class shared_ptr {
  public:
-  shared_ptr(T *p = nullptr) {
+  explicit shared_ptr(T *p = nullptr) {
     ptr = p;
     counter = new size_t(0);
     (*counter)++;
@@ -34,6 +34,7 @@ class shared_ptr {
 
   shared_ptr &operator=(const shared_ptr &other) {
     if (ptr != other.ptr) ~this; //?
+    else return *this;
     ptr = other.ptr;
     counter = other.counter;
     (*counter)++;
@@ -42,10 +43,12 @@ class shared_ptr {
 
   shared_ptr &operator=(shared_ptr &&other) {
     if (ptr != other.ptr) ~this; //?
+    else return *this;
     ptr = other.ptr;
     counter = other.counter;
     other.ptr = nullptr;
     other.counter = nullptr;
+    *(counter)++;
     return *this;
   }
 
@@ -54,9 +57,10 @@ class shared_ptr {
   }
 
   T *reset(T *newnew = nullptr) {
-    if (ptr) delete ptr;
+    T *tmp = ptr;
     ptr = newnew;
     (*counter) = 0;        //???
+    return tmp;
   }
 
   T *release() {
