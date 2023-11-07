@@ -4,7 +4,7 @@
 #include <string>
 
 class BitArray {
-private:
+ private:
   const int resizing_rate = 2;
 
   size_t _capacity;
@@ -12,9 +12,9 @@ private:
 
   unsigned char *_array;
 
-public:
+ public:
   class Iterator {
-  public:
+   public:
     Iterator(BitArray* tmp, size_t index);
     Iterator& operator=(const Iterator& other) = default;
     bool operator==(const Iterator& other) const;
@@ -23,10 +23,10 @@ public:
     bool operator!=(bool bit) const;
     Iterator& operator++();
     Iterator& operator=(const bool& bit);
-    bool operator*();
+    Iterator& operator*();
 
-  private:
-    BitArray *_BitArray;
+   private:
+    BitArray *_bit_array;
     size_t _cur_index;
   };
 
@@ -71,7 +71,7 @@ public:
 
   [[nodiscard]] int count() const;
 
-  //bool operator[](int i) const;
+  bool operator[](int i) const;
   Iterator operator[](int i);
 
   [[nodiscard]] int size() const;

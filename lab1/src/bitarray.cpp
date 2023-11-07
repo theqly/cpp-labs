@@ -251,11 +251,11 @@ int BitArray::count() const {
   return counter;
 }
 
-/*bool BitArray::operator[](int i) const {
+bool BitArray::operator[](int i) const {
   if( i > _cur_size )
     throw std::bad_array_new_length();
   return (mask(i) & _array[i / 8]) != 0;
-}*/
+}
 
 BitArray::Iterator BitArray::operator[](int i){
   if( i > _cur_size )
@@ -325,7 +325,7 @@ BitArray::Iterator BitArray::end() {
 }
 
 BitArray::Iterator::Iterator(BitArray* tmp, size_t index){
-  _BitArray = tmp;
+  _bit_array = tmp;
   _cur_index = index;
 }
 
@@ -335,27 +335,26 @@ BitArray::Iterator& BitArray::Iterator::operator++() {
 }
 
 BitArray::Iterator& BitArray::Iterator::operator=(const bool& bit) {
-  _BitArray->set(static_cast<int>(_cur_index), bit);
+  _bit_array->set(static_cast<int>(_cur_index), bit);
   return *this;
 }
 
 bool BitArray::Iterator::operator==(const BitArray::Iterator& other) const {
-  return this->_BitArray == other._BitArray && this->_cur_index == other._cur_index;
+  return this->_bit_array == other._bit_array && this->_cur_index == other._cur_index;
 }
 
-bool BitArray::Iterator::operator!=(const BitArray::Iterator& otherIterator) const {
-  return !(*this == otherIterator);
+bool BitArray::Iterator::operator!=(const BitArray::Iterator& other) const {
+  return this->_bit_array != other._bit_array && this->_cur_index != other._cur_index;
 }
 
 bool BitArray::Iterator::operator==(const bool bit) const {
-  return this->_BitArray->_array[_cur_index] == bit;
+  return this->_bit_array->_array[_cur_index] == bit;
 }
 
 bool BitArray::Iterator::operator!=(const bool bit) const {
-  return this->_BitArray->_array[_cur_index] != bit;
+  return this->_bit_array->_array[_cur_index] != bit;
 }
 
-bool BitArray::Iterator::operator*() {
-  BitArray* tmp = this->_BitArray;
-  return ((*tmp)[static_cast<int>(_cur_index)] != 0);
+BitArray::Iterator& BitArray::Iterator::operator*() {
+  return *this;
 }

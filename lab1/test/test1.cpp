@@ -1,6 +1,7 @@
 #include "bitarray.h"
 #include "../src/bitarray.cpp"
 #include <gtest/gtest.h>
+#include <utility>
 
 TEST(StandartConstr, Constrs){
   BitArray arr = BitArray();
@@ -8,17 +9,17 @@ TEST(StandartConstr, Constrs){
 }
 
 TEST(CapacityConstr, Constrs){
-  BitArray arr = BitArray(5);
+  const BitArray arr = BitArray(5);
   EXPECT_EQ(arr[3], 0);
 }
 
 TEST(CopyConstr, Constrs){
   BitArray arr1 = BitArray(15);
   arr1.reset(10);
-  EXPECT_EQ(arr1[10], 0);
+  EXPECT_EQ(std::as_const(arr1)[10], 0);
   arr1.reset();
   BitArray arr2 = BitArray(arr1);
-  EXPECT_EQ(arr2[12], 0);
+  EXPECT_EQ(std::as_const(arr2)[12], 0);
 }
 
 TEST(Swap, Swap){
@@ -35,10 +36,10 @@ TEST(CopyOperator, Operators){
   BitArray arr2 = BitArray(13);
   arr2.reset();
   EXPECT_EQ(arr2.size(), 13);
-  EXPECT_EQ(arr2[8], 0);
+  EXPECT_EQ(std::as_const(arr2)[8], 0);
   arr2 = arr1;
   EXPECT_EQ(arr2.size(), 15);
-  EXPECT_EQ(arr2[8], 1);
+  EXPECT_EQ(std::as_const(arr2)[8], 1);
 }
 
 TEST(Resize, Resize){
@@ -46,7 +47,7 @@ TEST(Resize, Resize){
   arr1.set();
   arr1.resize(17);
   EXPECT_EQ(arr1.size(), 17);
-  EXPECT_EQ(arr1[13], 1);
+  EXPECT_EQ(std::as_const(arr1)[13], 1);
 }
 
 TEST(Clear, Clear){
@@ -61,9 +62,9 @@ TEST(Pushing, Pushing){
   BitArray arr1 = BitArray(15);
   arr1.set();
   arr1.push_back(false);
-  EXPECT_EQ(arr1[15], 0);
+  EXPECT_EQ(std::as_const(arr1)[15], 0);
   arr1.push_back(true);
-  EXPECT_EQ(arr1[16], 1);
+  EXPECT_EQ(std::as_const(arr1)[16], 1);
 }
 
 TEST(BitAnd, BitOperators){
@@ -73,7 +74,7 @@ TEST(BitAnd, BitOperators){
   arr2.set();
   arr2 &= arr1;
   for(size_t i = 0; i < 24; ++i){
-    EXPECT_EQ(arr2[i], 0);
+    EXPECT_EQ(std::as_const(arr2)[i], 0);
   }
   arr1.set(3, true);
   arr1.set(13, true);
@@ -82,11 +83,11 @@ TEST(BitAnd, BitOperators){
   arr1.set(23, true);
   arr2.set();
   arr2 &= arr1;
-  EXPECT_EQ(arr2[3], 1);
-  EXPECT_EQ(arr2[13], 1);
-  EXPECT_EQ(arr2[16], 1);
-  EXPECT_EQ(arr2[20], 1);
-  EXPECT_EQ(arr2[23], 1);
+  EXPECT_EQ(std::as_const(arr2)[3], 1);
+  EXPECT_EQ(std::as_const(arr2)[13], 1);
+  EXPECT_EQ(std::as_const(arr2)[16], 1);
+  EXPECT_EQ(std::as_const(arr2)[20], 1);
+  EXPECT_EQ(std::as_const(arr2)[23], 1);
 }
 
 TEST(BitOr, BitOperators){
@@ -96,7 +97,7 @@ TEST(BitOr, BitOperators){
   arr2.set();
   arr2 |= arr1;
   for(size_t i = 0; i < 24; ++i){
-    EXPECT_EQ(arr2[i], 1);
+    EXPECT_EQ(std::as_const(arr2)[i], 1);
   }
   arr1.set(3, true);
   arr1.set(13, true);
@@ -104,11 +105,11 @@ TEST(BitOr, BitOperators){
   arr1.set(20, true);
   arr1.set(23, true);
   arr2 |= arr1;
-  EXPECT_EQ(arr2[3], 1);
-  EXPECT_EQ(arr2[13], 1);
-  EXPECT_EQ(arr2[16], 1);
-  EXPECT_EQ(arr2[20], 1);
-  EXPECT_EQ(arr2[23], 1);
+  EXPECT_EQ(std::as_const(arr2)[3], 1);
+  EXPECT_EQ(std::as_const(arr2)[13], 1);
+  EXPECT_EQ(std::as_const(arr2)[16], 1);
+  EXPECT_EQ(std::as_const(arr2)[20], 1);
+  EXPECT_EQ(std::as_const(arr2)[23], 1);
 }
 
 TEST(BitXor, BitOperators){
@@ -118,7 +119,7 @@ TEST(BitXor, BitOperators){
   arr2.set();
   arr2 ^= arr1;
   for(size_t i = 0; i < 24; ++i){
-    EXPECT_EQ(arr2[i], 1);
+    EXPECT_EQ(std::as_const(arr2)[i], 1);
   }
   arr1.set(3, true);
   arr1.set(13, true);
@@ -127,20 +128,20 @@ TEST(BitXor, BitOperators){
   arr1.set(23, true);
   arr2.reset();
   arr2 ^= arr1;
-  EXPECT_EQ(arr2[2], 0);
-  EXPECT_EQ(arr2[3], 1);
-  EXPECT_EQ(arr2[4], 0);
-  EXPECT_EQ(arr2[12], 0);
-  EXPECT_EQ(arr2[13], 1);
-  EXPECT_EQ(arr2[14], 0);
-  EXPECT_EQ(arr2[15], 0);
-  EXPECT_EQ(arr2[16], 1);
-  EXPECT_EQ(arr2[17], 0);
-  EXPECT_EQ(arr2[19], 0);
-  EXPECT_EQ(arr2[20], 1);
-  EXPECT_EQ(arr2[21], 0);
-  EXPECT_EQ(arr2[22], 0);
-  EXPECT_EQ(arr2[23], 1);
+  EXPECT_EQ(std::as_const(arr2)[2], 0);
+  EXPECT_EQ(std::as_const(arr2)[3], 1);
+  EXPECT_EQ(std::as_const(arr2)[4], 0);
+  EXPECT_EQ(std::as_const(arr2)[12], 0);
+  EXPECT_EQ(std::as_const(arr2)[13], 1);
+  EXPECT_EQ(std::as_const(arr2)[14], 0);
+  EXPECT_EQ(std::as_const(arr2)[15], 0);
+  EXPECT_EQ(std::as_const(arr2)[16], 1);
+  EXPECT_EQ(std::as_const(arr2)[17], 0);
+  EXPECT_EQ(std::as_const(arr2)[19], 0);
+  EXPECT_EQ(std::as_const(arr2)[20], 1);
+  EXPECT_EQ(std::as_const(arr2)[21], 0);
+  EXPECT_EQ(std::as_const(arr2)[22], 0);
+  EXPECT_EQ(std::as_const(arr2)[23], 1);
 }
 
 TEST(SelfBitLeftShift, BitShifts){
@@ -148,17 +149,17 @@ TEST(SelfBitLeftShift, BitShifts){
   arr1.set();
   arr1.set(20, false);
   arr1 <<= 16;
-  EXPECT_EQ(arr1[7], 1);
-  EXPECT_EQ(arr1[8], 0);
-  EXPECT_EQ(arr1[4], 0);
+  EXPECT_EQ(std::as_const(arr1)[7], 1);
+  EXPECT_EQ(std::as_const(arr1)[8], 0);
+  EXPECT_EQ(std::as_const(arr1)[4], 0);
   arr1.reset();
   arr1.set(8, true);
   arr1.set(11, true);
   arr1.set(20, true);
   arr1 <<= 8;
-  EXPECT_EQ(arr1[0], 1);
-  EXPECT_EQ(arr1[3], 1);
-  EXPECT_EQ(arr1[12], 1);
+  EXPECT_EQ(std::as_const(arr1)[0], 1);
+  EXPECT_EQ(std::as_const(arr1)[3], 1);
+  EXPECT_EQ(std::as_const(arr1)[12], 1);
 }
 
 TEST(SelfBitRightShift, BitShifts){
@@ -166,16 +167,16 @@ TEST(SelfBitRightShift, BitShifts){
   arr1.set();
   arr1.set(4, false);
   arr1 >>= 16;
-  EXPECT_EQ(arr1[16], 1);
-  EXPECT_EQ(arr1[17], 1);
-  EXPECT_EQ(arr1[15], 0);
-  EXPECT_EQ(arr1[20], 0);
+  EXPECT_EQ(std::as_const(arr1)[16], 1);
+  EXPECT_EQ(std::as_const(arr1)[17], 1);
+  EXPECT_EQ(std::as_const(arr1)[15], 0);
+  EXPECT_EQ(std::as_const(arr1)[20], 0);
   arr1.reset();
   arr1.set(4, true);
   arr1.set(7, true);
   arr1 >>= 8;
-  EXPECT_EQ(arr1[12], 1);
-  EXPECT_EQ(arr1[15], 1);
+  EXPECT_EQ(std::as_const(arr1)[12], 1);
+  EXPECT_EQ(std::as_const(arr1)[15], 1);
 }
 
 TEST(BitRightShift, BitShifts){
@@ -185,7 +186,7 @@ TEST(BitRightShift, BitShifts){
   arr1.set(5, true);
   arr1.set(12, true);
   arr1.set(15, true);
-  BitArray arr2 = arr1 >> 16;
+  const BitArray arr2 = arr1 >> 16;
   EXPECT_EQ(arr2[0], 0);
   EXPECT_EQ(arr2[5], 0);
   EXPECT_EQ(arr2[12], 0);
@@ -203,7 +204,7 @@ TEST(BitLeftShift, BitShifts){
   arr1.set(28, true);
   arr1.set(21, true);
   arr1.set(16, true);
-  BitArray arr2 = arr1 << 16;
+  const BitArray arr2 = arr1 << 16;
   EXPECT_EQ(arr2[0], 1);
   EXPECT_EQ(arr2[5], 1);
   EXPECT_EQ(arr2[12], 1);
@@ -233,11 +234,11 @@ TEST(None, None){
 TEST(Inversion, BitOperators){
   BitArray arr1 = BitArray(8);
   arr1.set();
-  EXPECT_EQ(arr1[2], 1);
-  EXPECT_EQ(arr1[3], 1);
+  EXPECT_EQ(std::as_const(arr1)[2], 1);
+  EXPECT_EQ(std::as_const(arr1)[3], 1);
   arr1 = ~arr1;
-  EXPECT_EQ(arr1[2], 0);
-  EXPECT_EQ(arr1[3], 0);
+  EXPECT_EQ(std::as_const(arr1)[2], 0);
+  EXPECT_EQ(std::as_const(arr1)[3], 0);
 }
 
 TEST(Counter, Counter){
@@ -262,23 +263,36 @@ TEST(To_string, To_string){
 
 TEST(Iterator, Iterator){
   BitArray arr1(16);
+
   arr1.set();
-  for(auto it : arr1){
-    EXPECT_EQ(it, 1);
+  for(auto& it : arr1){
+    EXPECT_TRUE(it == 1);
   }
   arr1.reset();
-  for(auto it : arr1){
-    EXPECT_EQ(it, 0);
+  for(auto& it : arr1){
+    EXPECT_TRUE(it == 0);
   }
 
-  for(auto it : arr1){
-    it = true;
+  bool bit = false;
+  for(auto& it : arr1){
+    it = bit;
+    bit = !bit;
+  }
+  bit = false;
+  for(auto& it : arr1){
+    EXPECT_TRUE(it == bit);
+    bit = !bit;
   }
 
+  bit = true;
   for(auto it = arr1.begin(); it != arr1.end(); ++it){
-    it = true;
+    it = bit;
+    bit = !bit;
   }
-  for(auto it : arr1){
-    EXPECT_EQ(it, 1);
+  bit = true;
+  for(auto it = arr1.begin(); it != arr1.end(); ++it){
+    EXPECT_TRUE(it == bit);
+    bit = !bit;
   }
+
 }

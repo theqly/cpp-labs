@@ -10,16 +10,10 @@ int main() {
     bit = !bit;
   }
   std::cout << arr1.to_string();
-
-  for(auto it : arr1){
+  std::cout << std::endl;
+  for(auto& it : arr1){
     it = true;
   }
-
-  for(auto it = arr1.begin(); it != arr1.end(); ++it){
-    it = bit;
-    bit = !bit;
-  }
-
   std::cout << arr1.to_string();
   return 0;
 }
