@@ -4,30 +4,39 @@
 #include <fstream>
 #include <tuple>
 
-template<typename... Is>
+template<typename... Args>
 class CVSParser {
   public:
   class InputIterator {
     public:
-    InputIterator(CVSParser& parser) : _parser(parser){
+    using reference = std::tuple<Args...>&;
+    using pointer = std::tuple<Args...>*;
+
+    InputIterator(CVSParser& parser, const size_t index) : _parser(parser) , _index(index){
     }
+    reference operator*();
+    InputIterator& operator++();
+
+    bool operator==(const InputIterator& other);
+    bool operator!=(const InputIterator& other);
+
     private:
+    std::string read_row();
     CVSParser _parser;
     size_t _index;
-    std::tuple<Is...> _tuple;
+    std::tuple<Args...> _tuple;
   };
-  InputIterator begin() {
-    return InputIterator(*this);
-  }
-  InputIterator end() {
-    return InputIterator(*this);
-  }
 
-  explicit CVSParser(std::ifstream& stream, const size_t skip_lines) : _stream(stream){
+  explicit CVSParser(std::ifstream& stream, const size_t skip_lines = 0) : _stream(stream), _skip_lines(skip_lines) {
     if(!stream.is_open()) {
       throw std::ifstream::failure("no input file");
     }
   }
+
+  InputIterator begin();
+
+  InputIterator end();
+
   private:
   std::ifstream& _stream;
   size_t _skip_lines;

@@ -18,6 +18,4 @@ std::basic_ostream<Ch, Tr>& operator<<(std::basic_ostream<Ch, Tr>& os, std::tupl
   return os;
 }
 
-
-
 #endif //tuple_printing
