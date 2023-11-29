@@ -1,9 +1,10 @@
 #ifndef LAB5
 #define LAB5
-#include <tuple_.h>
+#include <tuple_utility.h>
 #include <fstream>
-#include <tuple>
+#include <limits>
 #include <memory>
+#include <tuple>
 
 template<typename... Args>
 class CVSParser {
@@ -37,7 +38,7 @@ class CVSParser {
 
     private:
     bool _is_ended;
-    CVSParser _parser;
+    CVSParser& _parser;
     pointer _tuple;
 
     std::string read_row() {
@@ -47,15 +48,15 @@ class CVSParser {
       return row;
     }
 
-    std::vector<std::string> get_data() {
+    std::vector<std::string> get_data(const std::string& row) {
       std::vector<std::string> data;
-      const std::string row = read_row();
       std::string elem;
       for(const char& symbol : row) {
         if(symbol =='\"') {
           _is_ended = true;
+          break;
         }
-        if(symbol == '\r') break;
+        if(symbol == '\n') break;
         if(symbol == ',') {
           data.push_back(elem);
           elem.clear();
@@ -68,8 +69,15 @@ class CVSParser {
     }
 
     void put_in_tuple() {
-      auto tmp = getResultCVSTuple<Args...>(get_data());
-      _tuple = std::make_shared<std::tuple<Args...>>(tmp);
+      const std::string row = read_row();
+      if(row.empty()) {
+        _tuple = nullptr;
+        _is_ended = true;
+      }
+      else {
+        auto tmp = create_tuple<Args...>(get_data(row));
+        _tuple = std::make_shared<std::tuple<Args...>>(tmp);
+      }
     }
   };
 
@@ -80,6 +88,7 @@ class CVSParser {
   }
 
   InputIterator begin() {
+    skip_lines();
     return InputIterator(*this, false);
   }
 
@@ -91,6 +100,14 @@ class CVSParser {
   std::ifstream& _stream;
   size_t _cur_line;
   size_t _skip_lines;
+
+  void skip_lines() {
+    for(size_t i = 0; i < _skip_lines; ++i) {
+      if(!_stream.ignore(std::numeric_limits<std::streamsize>::max(), _stream.widen('\n'))) {
+        throw std::exception();
+      }
+    }
+  }
 };
 
 #endif //LAB5

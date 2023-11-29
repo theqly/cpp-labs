@@ -1,6 +1,5 @@
-#ifndef tuple_printing
-#define tuple_printing
-
+#ifndef tuple_utility
+#define tuple_utility
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -22,23 +21,22 @@ std::basic_ostream<Ch, Tr>& operator<<(std::basic_ostream<Ch, Tr>& os, std::tupl
 }
 
 template<typename T>
-  T convert(const std::string& s) {
-  std::stringstream buff(s);
+  T type_conversion(const std::string& str) {
+  std::stringstream tmp(str);
   T value;
-  buff >> value;
+  tmp >> value;
   return value;
 }
 
 template<typename... Args, size_t... Indices>
-std::tuple<Args...> crutch(const std::vector<std::string>& v, std::index_sequence<Indices...>) {
-  auto tmp = std::make_tuple(convert<Args>(v[Indices])...);
+std::tuple<Args...> unite(const std::vector<std::string>& vec, std::index_sequence<Indices...>) {
+  auto tmp = std::make_tuple(type_conversion<Args>(vec[Indices])...);
   return tmp;
 }
 
 template<typename... Args>
-std::tuple<Args...> getResultCVSTuple(
-        const std::vector<std::string>& v) {
-  return crutch<Args...>(v, std::make_index_sequence<sizeof...(Args)>{});
+std::tuple<Args...> create_tuple(const std::vector<std::string>& str) {
+  return unite<Args...>(str, std::make_index_sequence<sizeof...(Args)>{});
 }
 
-#endif //tuple_printing
+#endif //tuple_utility
