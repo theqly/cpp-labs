@@ -9,7 +9,7 @@ game::~game(){
 }
 
 void game::init() {
-  if(!SDL_Init(SDL_INIT_EVERYTHING)){
+  if(SDL_Init(SDL_INIT_EVERYTHING != 0)){
 	is_running = false;
   }
   window_ = SDL_CreateWindow("Sprout Lands", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width_, screen_height_, SDL_WINDOW_BORDERLESS);
@@ -71,7 +71,6 @@ void game::update() {
 void game::render() {
   SDL_RenderClear(renderer_);
   background_.render(0,0);
-  start_button_.apply_color();
   start_button_.render(screen_width_ * 3 / 8, screen_height_ * 3 /8);
   SDL_RenderPresent(renderer_);
 }
