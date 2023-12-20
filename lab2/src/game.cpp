@@ -2,7 +2,12 @@
 
 #include <SDL_image.h>
 
-game::game() : is_running(true), screen_width_(1280), screen_height_(720), window_(nullptr), renderer_(nullptr), background_(), start_button_(){}
+game::game() : is_running(true),
+			screen_width_(1280),
+			screen_height_(720),
+			window_(nullptr),
+			renderer_(nullptr),
+			background_(){}
 
 game::~game(){
   close();
@@ -13,15 +18,28 @@ void game::init() {
 	is_running = false;
   }
   window_ = SDL_CreateWindow("Sprout Lands", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width_, screen_height_, SDL_WINDOW_BORDERLESS);
-  renderer_ = SDL_CreateRenderer(window_, -1, SDL_RENDERER_ACCELERATED);
+  if(!window_){
+	std::cout << "cant open a window" << std::endl;
+	is_running = false;
+  }
+  renderer_ = SDL_CreateRenderer(window_, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+  if(!renderer_){
+	std::cout << "cant open a renderer" << std::endl;
+	is_running = false;
+  }
 
-  background_.set_renderer(renderer_);
-  background_.load("../assets/menu2.jpg");
-  background_.render(0, 0);
+  if(!background_.load("../assets/menu2.jpg", renderer_)){
+	std::cout << "background texture not loaded" << std::endl;
+	is_running = false;
+  }
+  background_.render(renderer_, 0, 0);
 
-  start_button_.set_renderer(renderer_);
-  start_button_.load("../assets/start_button.jpg");
-  background_.render(screen_width_ * 3 / 8, screen_height_ * 3 /8);
+  character.init(renderer_);
+  if(!character.load_texture("../assets/char.jpg")){
+	std::cout << "character texture not loaded" << std::endl;
+	is_running = false;
+  }
+  character.render();
 }
 
 void game::run(){
@@ -30,16 +48,24 @@ void game::run(){
 }
 
 void game::gameloop() {
+  uint32_t counter_frames = 0;
+  fps_timer.start();
   while (is_running){
+	cap_timer.start();
 	keyboard_event();
 	update();
 	render();
+	++counter_frames;
+	uint32_t cur_frame_time = cap_timer.get_time();
+	if(cur_frame_time < frame_time) SDL_Delay(frame_time - cur_frame_time);
+	cap_timer.stop();
   }
+  fps_timer.stop();
 }
 
 void game::keyboard_event() {
   SDL_Event e;
-  while( SDL_PollEvent( &e ) != 0 ) {
+  while( SDL_PollEvent(&e) != 0 ) {
 	if (e.type == SDL_QUIT) {
 	  is_running = false;
 	}
@@ -47,37 +73,25 @@ void game::keyboard_event() {
 	  switch (e.key.keysym.sym) {
 		case SDLK_ESCAPE: is_running = false;
 		  break;
-		case SDLK_q: start_button_.red += 32;
-		  break;
-		case SDLK_w: start_button_.green += 32;
-		  break;
-		case SDLK_e: start_button_.blue += 32;
-		  break;
-		case SDLK_a: start_button_.red -= 32;
-		  break;
-		case SDLK_s: start_button_.green -= 32;
-		  break;
-		case SDLK_d: start_button_.blue -= 32;
-		  break;
 	  }
 	}
+	character.handle_events(e);
   }
 }
 
 void game::update() {
-
+  character.move();
 }
 
 void game::render() {
   SDL_RenderClear(renderer_);
-  background_.render(0,0);
-  start_button_.render(screen_width_ * 3 / 8, screen_height_ * 3 /8);
+  background_.render(renderer_, 0,0);
+  character.render();
   SDL_RenderPresent(renderer_);
 }
 
 void game::close() {
   background_.clear();
-  start_button_.clear();
   SDL_DestroyRenderer(renderer_);
   renderer_ = nullptr;
   SDL_DestroyWindow(window_);

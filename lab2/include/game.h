@@ -2,6 +2,8 @@
 #define GAME_H_
 
 #include <texture.h>
+#include <game_object.h>
+#include <timer.h>
 #include <SDL.h>
 
 class game{
@@ -10,8 +12,11 @@ class game{
   ~game();
   void run();
  private:
-  const size_t FPS = 60;
-  const size_t frame_time = 1000 / FPS;
+  uint32_t fps = 60;
+  uint32_t frame_time = 1000 / fps;
+
+  timer fps_timer;
+  timer cap_timer;
 
   bool is_running;
 
@@ -29,7 +34,8 @@ class game{
   SDL_Renderer* renderer_;
 
   texture background_;
-  texture start_button_;
+
+  game_object character;
 };
 
 #endif //GAME_H_

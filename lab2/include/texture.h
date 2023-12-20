@@ -9,22 +9,17 @@ class texture{
   texture();
   ~texture();
 
-  void set_renderer(SDL_Renderer* ren);
-  void load(const std::string& path);
+  bool load(const std::string& path, SDL_Renderer* rend);
   void clear();
-  void apply_color();
-  void render( int x, int y );
+  void set_color(Uint8 red, Uint8 green,Uint8 blue);
+  void set_blendmode(SDL_BlendMode blending);
+  void set_alpha(Uint8 alpha);
+  void render(SDL_Renderer* rend, int x, int y, SDL_Rect* clip = nullptr, double angle = 0.0, SDL_Point* center = nullptr, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
   int get_width() const;
   int get_height() const;
 
-  Uint8 red = 255;
-  Uint8 green = 255;
-  Uint8 blue = 255;
-
  private:
-
-  SDL_Renderer* renderer_;
   SDL_Texture* texture_;
   int width_;
   int height_;
