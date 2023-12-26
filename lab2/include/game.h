@@ -3,6 +3,7 @@
 
 #include <texture.h>
 #include <player.h>
+#include <plant.h>
 #include <timer.h>
 #include <map.h>
 #include <SDL.h>
@@ -36,6 +37,7 @@ class game{
 
   map map_;
   player player_;
+  plant beet_;
   SDL_Rect camera_;
 };
 

@@ -8,7 +8,8 @@ game::game(int screen_width, int screen_height) : is_running(true),
 			window_(nullptr),
 			renderer_(nullptr),
 			map_(nullptr, 0, 0),
-			player_(nullptr){}
+			player_(nullptr),
+			beet_(nullptr, 0, 0){}
 
 game::~game(){
   close();
@@ -33,15 +34,17 @@ void game::init() {
 
   player_ = player(renderer_, 500, 500);
   map_ = map(renderer_, screen_width_, screen_height_);
+  beet_ = plant(renderer_, 0, 0);
+
+  player_.load_texture("../assets/char.bmp");
+  player_.set_camera(camera_);
+  player_.render(camera_);
+
   map_.load("../assets/map.txt");
   map_.render(camera_);
 
-  if(!player_.load_texture("../assets/char.bmp")){
-	std::cout << "character texture not loaded" << std::endl;
-	is_running = false;
-  }
-  player_.set_camera(camera_);
-  player_.render(camera_);
+  beet_.load_texture("../assets/beet.bmp");
+  beet_.render();
 }
 
 void game::run(){
@@ -78,10 +81,12 @@ void game::keyboard_event() {
 	  }
 	}
 	player_.handle_events(e);
+	beet_.handle_events(e);
   }
 }
 
 void game::update() {
+  beet_.update(player_);
   player_.move();
   player_.set_camera(camera_);
 }
@@ -89,6 +94,7 @@ void game::update() {
 void game::render() {
   SDL_RenderClear(renderer_);
   map_.render(camera_);
+  beet_.render();
   player_.render(camera_);
   SDL_RenderPresent(renderer_);
 }

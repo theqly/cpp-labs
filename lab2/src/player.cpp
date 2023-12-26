@@ -2,15 +2,21 @@
 #include <iostream>
 
 player::player(SDL_Renderer* rend, int x, int y) : renderer_(rend), /*pos_x(x), pos_y(y),*/ vel_x(0), vel_y(0), cur_clip(0), sprite_clips(), texture_(){
-  //collision_box.w = 50;
-  //collision_box.h = 50;
+  collision_box.x = x;
+  collision_box.y = y;
 }
+
+player::~player() = default;
 
 void player::move(){
   collision_box.x += vel_x;
   if(collision_box.x < 0 || collision_box.x + sprite_clips[cur_clip].w >= 2560) collision_box.x -= vel_x;
   collision_box.y += vel_y;
   if(collision_box.y < 0 || collision_box.y + sprite_clips[cur_clip].h >= 1600) collision_box.y -= vel_y;
+}
+
+SDL_Rect player::get_box() {
+  return collision_box;
 }
 
 void player::handle_events(SDL_Event &e) {

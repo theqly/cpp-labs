@@ -12,13 +12,14 @@ void map::load(const std::string& path) {
   grass_.load("../assets/grass_1.bmp", renderer_);
   water_.load("../assets/Water.bmp", renderer_);
   std::ifstream map(path);
-  int tile = 0;
+  int tile = -1;
   for(int i = 0; i < 80; ++i){
 	for(int j = 0; j < 100; ++j){
 	  map >> tile;
 	  if(tile == 0){
 		tiles_[i*80 + j].init(i*32, j*16, grass_);
-	  } else {
+	  }
+	  else if(tile == 1){
 		tiles_[i*80 + j].init(i*32, j*16, water_);
 	  }
 	}

@@ -7,7 +7,9 @@
 class player{
  public:
   explicit player(SDL_Renderer* rend, int x = 0, int y = 0);
+  ~player();
   void move();
+  SDL_Rect get_box();
   void handle_events(SDL_Event& e);
   bool load_texture(const std::string& path);
   void set_camera(SDL_Rect& camera);

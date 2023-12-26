@@ -11,12 +11,13 @@ class timer{
   void stop();
   void pause();
   void unpause();
+  void reset();
 
-  uint32_t get_time();
+  uint64_t get_time();
 
  private:
-  uint32_t start_time;
-  uint32_t paused_time;
+  uint64_t start_time;
+  uint64_t paused_time;
 
   bool is_started;
   bool is_paused;

@@ -29,7 +29,7 @@ class map{
   texture grass_;
   texture water_;
 
-  Tile* tiles_;
+  tile* tiles_;
 };
 
 
