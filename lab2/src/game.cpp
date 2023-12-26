@@ -2,12 +2,13 @@
 
 #include <SDL_image.h>
 
-game::game() : is_running(true),
-			screen_width_(1280),
-			screen_height_(720),
+game::game(int screen_width, int screen_height) : is_running(true),
+			screen_width_(screen_width),
+			screen_height_(screen_height),
 			window_(nullptr),
 			renderer_(nullptr),
-			background_(){}
+			map_(nullptr, 0, 0),
+			player_(nullptr){}
 
 game::~game(){
   close();
@@ -28,18 +29,19 @@ void game::init() {
 	is_running = false;
   }
 
-  if(!background_.load("../assets/menu2.jpg", renderer_)){
-	std::cout << "background texture not loaded" << std::endl;
-	is_running = false;
-  }
-  background_.render(renderer_, 0, 0);
+  camera_ = {0,0,screen_width_, screen_height_};
 
-  character.init(renderer_);
-  if(!character.load_texture("../assets/char.jpg")){
+  player_ = player(renderer_, screen_width_ / 2, screen_height_ / 2);
+  map_ = map(renderer_, screen_width_, screen_height_);
+  map_.load("");
+  map_.render(camera_);
+
+  if(!player_.load_texture("../assets/char.bmp")){
 	std::cout << "character texture not loaded" << std::endl;
 	is_running = false;
   }
-  character.render();
+  player_.set_camera(camera_);
+  player_.render(camera_);
 }
 
 void game::run(){
@@ -75,23 +77,22 @@ void game::keyboard_event() {
 		  break;
 	  }
 	}
-	character.handle_events(e);
+	player_.handle_events(e);
   }
 }
 
 void game::update() {
-  character.move();
+  player_.move();
 }
 
 void game::render() {
   SDL_RenderClear(renderer_);
-  background_.render(renderer_, 0,0);
-  character.render();
+  map_.render(camera_);
+  player_.render(camera_);
   SDL_RenderPresent(renderer_);
 }
 
 void game::close() {
-  background_.clear();
   SDL_DestroyRenderer(renderer_);
   renderer_ = nullptr;
   SDL_DestroyWindow(window_);

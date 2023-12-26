@@ -1,0 +1,74 @@
+#include <player.h>
+#include <iostream>
+
+player::player(SDL_Renderer* rend, int x, int y) : renderer_(rend), pos_x(x), pos_y(y), vel_x(0), vel_y(0), cur_clip(0), sprite_clips(), texture_(){}
+
+void player::move(){
+  pos_x += vel_x;
+
+  if(pos_x < 0 || pos_x + sprite_clips[cur_clip].w >= 1920) pos_x -= vel_x;
+  pos_y += vel_y;
+  if(pos_y < 0 || pos_y + sprite_clips[cur_clip].h >= 1080) pos_y -= vel_y;
+}
+
+void player::handle_events(SDL_Event &e) {
+  if(e.type == SDL_KEYDOWN && e.key.repeat == 0){
+	switch (e.key.keysym.sym) {
+	  case SDLK_w: vel_y -= 10; cur_clip = 1; break;
+	  case SDLK_s: vel_y += 10; cur_clip = 0; break;
+	  case SDLK_a: vel_x -= 10; cur_clip = 2; break;
+	  case SDLK_d: vel_x += 10; cur_clip = 3; break;
+	}
+  }
+  else if (e.type == SDL_KEYUP && e.key.repeat == 0){
+	switch (e.key.keysym.sym) {
+	  case SDLK_w: vel_y += 10; break;
+	  case SDLK_s: vel_y -= 10; break;
+	  case SDLK_a: vel_x += 10; break;
+	  case SDLK_d: vel_x -= 10; break;
+	}
+  }
+}
+
+bool player::load_texture(const std::string& path){
+
+  if(!texture_.load(path, renderer_)){
+	std::cout << "game object cant load a texture with path" << path << std::endl;
+	return false;
+  }
+
+  sprite_clips[0].x = 19;
+  sprite_clips[0].y = 16;
+  sprite_clips[0].w = 42;
+  sprite_clips[0].h = 47;
+
+  sprite_clips[1].x = 19;
+  sprite_clips[1].y = 156;
+  sprite_clips[1].w = 42;
+  sprite_clips[1].h = 47;
+
+  sprite_clips[2].x = 25;
+  sprite_clips[2].y = 296;
+  sprite_clips[2].w = 42;
+  sprite_clips[2].h = 47;
+
+  sprite_clips[3].x = 22;
+  sprite_clips[3].y = 435;
+  sprite_clips[3].w = 42;
+  sprite_clips[3].h = 47;
+
+  return true;
+}
+
+void player::set_camera(SDL_Rect &camera) {
+  camera.x = (collision_box.x + sprite_clips[cur_clip].w / 2) - 1920 /2;
+  camera.x = (collision_box.x + sprite_clips[cur_clip].w / 2) - 1920 /2;
+  if(camera.x < 0) camera.x = 0;
+  if(camera.y < 0) camera.y = 0;
+  if(camera.x > 960 - camera.w) camera.x = 960 - camera.w;
+  if(camera.y > 960 - camera.h) camera.y = 960 - camera.h;
+}
+
+void player::render(SDL_Rect& camera) {
+  texture_.render(renderer_, collision_box.x - camera.x, collision_box.y - camera.y, &sprite_clips[cur_clip]);
+}

@@ -2,13 +2,14 @@
 #define GAME_H_
 
 #include <texture.h>
-#include <game_object.h>
+#include <player.h>
 #include <timer.h>
+#include <map.h>
 #include <SDL.h>
 
 class game{
  public:
-  game();
+  game(int screen_width, int screen_height);
   ~game();
   void run();
  private:
@@ -33,9 +34,9 @@ class game{
   SDL_Window* window_;
   SDL_Renderer* renderer_;
 
-  texture background_;
-
-  game_object character;
+  map map_;
+  player player_;
+  SDL_Rect camera_;
 };
 
 #endif //GAME_H_
