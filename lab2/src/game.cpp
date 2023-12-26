@@ -29,11 +29,11 @@ void game::init() {
 	is_running = false;
   }
 
-  camera_ = {0,0,screen_width_, screen_height_};
+  camera_ = {0, 0, screen_width_, screen_height_};
 
-  player_ = player(renderer_, screen_width_ / 2, screen_height_ / 2);
+  player_ = player(renderer_, 500, 500);
   map_ = map(renderer_, screen_width_, screen_height_);
-  map_.load("");
+  map_.load("../assets/map.txt");
   map_.render(camera_);
 
   if(!player_.load_texture("../assets/char.bmp")){
@@ -83,6 +83,7 @@ void game::keyboard_event() {
 
 void game::update() {
   player_.move();
+  player_.set_camera(camera_);
 }
 
 void game::render() {

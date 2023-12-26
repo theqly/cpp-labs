@@ -13,7 +13,6 @@ class player{
   void set_camera(SDL_Rect& camera);
   void render(SDL_Rect& camera);
  private:
-  int pos_x, pos_y;
   int vel_x, vel_y;
 
   char cur_clip;

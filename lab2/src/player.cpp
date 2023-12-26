@@ -1,14 +1,16 @@
 #include <player.h>
 #include <iostream>
 
-player::player(SDL_Renderer* rend, int x, int y) : renderer_(rend), pos_x(x), pos_y(y), vel_x(0), vel_y(0), cur_clip(0), sprite_clips(), texture_(){}
+player::player(SDL_Renderer* rend, int x, int y) : renderer_(rend), /*pos_x(x), pos_y(y),*/ vel_x(0), vel_y(0), cur_clip(0), sprite_clips(), texture_(){
+  //collision_box.w = 50;
+  //collision_box.h = 50;
+}
 
 void player::move(){
-  pos_x += vel_x;
-
-  if(pos_x < 0 || pos_x + sprite_clips[cur_clip].w >= 1920) pos_x -= vel_x;
-  pos_y += vel_y;
-  if(pos_y < 0 || pos_y + sprite_clips[cur_clip].h >= 1080) pos_y -= vel_y;
+  collision_box.x += vel_x;
+  if(collision_box.x < 0 || collision_box.x + sprite_clips[cur_clip].w >= 2560) collision_box.x -= vel_x;
+  collision_box.y += vel_y;
+  if(collision_box.y < 0 || collision_box.y + sprite_clips[cur_clip].h >= 1600) collision_box.y -= vel_y;
 }
 
 void player::handle_events(SDL_Event &e) {
@@ -61,12 +63,12 @@ bool player::load_texture(const std::string& path){
 }
 
 void player::set_camera(SDL_Rect &camera) {
-  camera.x = (collision_box.x + sprite_clips[cur_clip].w / 2) - 1920 /2;
-  camera.x = (collision_box.x + sprite_clips[cur_clip].w / 2) - 1920 /2;
+  camera.x = (collision_box.x + sprite_clips[cur_clip].w / 2) - 960 /2;
+  camera.y = (collision_box.y + sprite_clips[cur_clip].h / 2) - 960 /2;
   if(camera.x < 0) camera.x = 0;
   if(camera.y < 0) camera.y = 0;
-  if(camera.x > 960 - camera.w) camera.x = 960 - camera.w;
-  if(camera.y > 960 - camera.h) camera.y = 960 - camera.h;
+  if(camera.x > 2560 - camera.w) camera.x = 2560 - camera.w;
+  if(camera.y > 1600 - camera.h) camera.y = 1600 - camera.h;
 }
 
 void player::render(SDL_Rect& camera) {

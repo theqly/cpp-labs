@@ -4,22 +4,21 @@
 #include <texture.h>
 #include <SDL.h>
 
-class Tile
-{
+class tile{
  public:
-  Tile();
+  tile();
   void init(int x, int y, texture& tex);
-  SDL_Rect getBox();
+  SDL_Rect get_box();
   void render(SDL_Renderer* rend, SDL_Rect &camera);
  private:
   texture texture_;
-  SDL_Rect mBox;
+  SDL_Rect box_;
 };
 
 class map{
  public:
-
   map(SDL_Renderer* rend, int screen_width, int screen_height);
+  ~map();
   void load(const std::string& path);
   void render(SDL_Rect& camera);
   bool check_collisions(SDL_Rect a, SDL_Rect b);
