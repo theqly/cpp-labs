@@ -48,13 +48,6 @@ void plant::update(player& pl) {
   if(check_collisions(pl.get_box())) is_player_in = true;
   else is_player_in = false;
   if(is_planted){
-	/*switch (timer_.get_time()) {
-	  case 10000: cur_clip = 0;
-	  case 20000: cur_clip = 1;
-	  case 30000: cur_clip = 2;
-	  case 40000: cur_clip = 3;
-	  case 50000: cur_clip = 4; timer_.stop();
-	}*/
 	uint32_t cur_time = timer_.get_time();
 	if(cur_time > 2000 && cur_time < 4000) cur_clip = 1;
 	else if(cur_time > 4000 && cur_time < 6000) cur_clip = 2;
