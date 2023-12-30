@@ -40,8 +40,8 @@ bool plant::load_texture(const std::string &path) {
 	sprite_clips[i].h = 64;
   }
 
-  box.w = 64;
-  box.h = 64;
+  box.w = texture_.get_width();
+  box.h = texture_.get_height();
 
   return true;
 }
