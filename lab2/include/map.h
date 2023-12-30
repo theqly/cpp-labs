@@ -2,6 +2,7 @@
 #define MAP_H_
 
 #include <texture.h>
+#include <plant.h>
 #include <SDL.h>
 
 class tile{
@@ -17,19 +18,24 @@ class tile{
 
 class map{
  public:
-  map(SDL_Renderer* rend, int screen_width, int screen_height);
+  map(SDL_Renderer* rend);
   ~map();
   void load(const std::string& path);
+  void handle_events(SDL_Event &e, player& pl);
+  void update();
   void render(SDL_Rect& camera);
   bool check_collisions(SDL_Rect a, SDL_Rect b);
-  bool touches_wall(SDL_Rect box);
-  bool set_tiles();
  private:
+  int width_in_tiles;
+  int height_in_tiles;
+
   SDL_Renderer* renderer_;
   texture grass_;
   texture water_;
 
   tile* tiles_;
+
+  plant beet_;
 };
 
 

@@ -69,8 +69,8 @@ bool player::load_texture(const std::string& path){
 }
 
 void player::set_camera(SDL_Rect &camera) {
-  camera.x = (collision_box.x + sprite_clips[cur_clip].w / 2) - 960 /2;
-  camera.y = (collision_box.y + sprite_clips[cur_clip].h / 2) - 960 /2;
+  camera.x = (collision_box.x + sprite_clips[cur_clip].w / 2) - 1920 /2;
+  camera.y = (collision_box.y + sprite_clips[cur_clip].h / 2) - 1080 /2;
   if(camera.x < 0) camera.x = 0;
   if(camera.y < 0) camera.y = 0;
   if(camera.x > 2560 - camera.w) camera.x = 2560 - camera.w;

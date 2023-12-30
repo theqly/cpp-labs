@@ -7,9 +7,8 @@ game::game(int screen_width, int screen_height) : is_running(true),
 			screen_height_(screen_height),
 			window_(nullptr),
 			renderer_(nullptr),
-			map_(nullptr, 0, 0),
-			player_(nullptr),
-			beet_(nullptr, 0, 0){}
+			map_(nullptr),
+			player_(nullptr){}
 
 game::~game(){
   close();
@@ -33,8 +32,7 @@ void game::init() {
   camera_ = {0, 0, screen_width_, screen_height_};
 
   player_ = player(renderer_, 500, 500);
-  map_ = map(renderer_, screen_width_, screen_height_);
-  beet_ = plant(renderer_, 0, 0);
+  map_ = map(renderer_);
 
   player_.load_texture("../assets/char.bmp");
   player_.set_camera(camera_);
@@ -42,9 +40,6 @@ void game::init() {
 
   map_.load("../assets/map.txt");
   map_.render(camera_);
-
-  beet_.load_texture("../assets/beet.bmp");
-  beet_.render();
 }
 
 void game::run(){
@@ -80,13 +75,13 @@ void game::keyboard_event() {
 		  break;
 	  }
 	}
+	map_.handle_events(e, player_);
 	player_.handle_events(e);
-	beet_.handle_events(e);
   }
 }
 
 void game::update() {
-  beet_.update(player_);
+  map_.update();
   player_.move();
   player_.set_camera(camera_);
 }
@@ -94,7 +89,6 @@ void game::update() {
 void game::render() {
   SDL_RenderClear(renderer_);
   map_.render(camera_);
-  beet_.render();
   player_.render(camera_);
   SDL_RenderPresent(renderer_);
 }

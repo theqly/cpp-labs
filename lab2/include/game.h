@@ -37,7 +37,6 @@ class game{
 
   map map_;
   player player_;
-  plant beet_;
   SDL_Rect camera_;
 };
 

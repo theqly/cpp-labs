@@ -9,15 +9,14 @@ class plant{
  public:
   plant(SDL_Renderer *rend, int x, int y);
   ~plant();
-  void plant_a_plant(int type);
-  bool check_collisions(SDL_Rect player);
-  void handle_events(SDL_Event &e);
   bool load_texture(const std::string& path);
-  void update(player& pl);
+  void update();
   void render();
+  void plant_a_plant();
+  SDL_Rect get_box();
  private:
-  bool is_planted;
-  bool is_player_in;
+  bool is_planted_;
+
   SDL_Renderer* renderer_;
 
   char cur_clip;
