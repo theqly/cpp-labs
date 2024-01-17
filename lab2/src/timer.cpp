@@ -40,10 +40,8 @@ void timer::reset() {
 }
 
 uint64_t timer::get_time() {
-	uint64_t time = 0;
 	if (is_started) {
-		if (is_paused) time = paused_time;
-		else time = SDL_GetTicks64() - start_time;
+		if (is_paused) return paused_time;
+		return SDL_GetTicks64() - start_time;
 	}
-	return time;
 }
