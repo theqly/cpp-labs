@@ -8,12 +8,11 @@ texture::~texture() {
 	clear();
 }
 
-bool texture::load(const std::string &path, SDL_Renderer *rend) {
+void texture::load(const std::string &path, SDL_Renderer *rend) {
 	clear();
 	SDL_Surface *loaded = IMG_Load(path.c_str());
 	if (!loaded) {
-		std::cout << "cant open a image with path" << path << std::endl;
-		return false;
+		throw std::runtime_error("cant load a texture with path" + path);
 	}
 	SDL_SetColorKey(loaded, SDL_TRUE, SDL_MapRGB(loaded->format, 0, 0xFF, 0xFF));
 	SDL_Texture *tmp = SDL_CreateTextureFromSurface(rend, loaded);
@@ -21,7 +20,6 @@ bool texture::load(const std::string &path, SDL_Renderer *rend) {
 	height_ = loaded->h;
 	texture_ = tmp;
 	free(loaded);
-	return true;
 }
 
 void texture::clear() {

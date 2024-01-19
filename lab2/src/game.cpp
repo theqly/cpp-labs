@@ -7,7 +7,7 @@ game::game(int screen_width, int screen_height) : is_running(true),
 												  screen_height_(screen_height),
 												  window_(nullptr),
 												  renderer_(nullptr),
-												  map_(nullptr),
+												  map_(),
 												  player_(nullptr) {}
 
 game::~game() {
@@ -25,19 +25,17 @@ void game::init() {
 							   screen_height_,
 							   SDL_WINDOW_BORDERLESS);
 	if (!window_) {
-		std::cout << "cant open a window" << std::endl;
-		is_running = false;
+		throw std::runtime_error("cant create a window");
 	}
 	renderer_ = SDL_CreateRenderer(window_, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (!renderer_) {
-		std::cout << "cant open a renderer" << std::endl;
-		is_running = false;
+		throw std::runtime_error("cant create a renderer");
 	}
 
 	camera_ = {0, 0, screen_width_, screen_height_};
 
 	player_ = player(renderer_, 500, 500);
-	map_ = map(renderer_);
+	map_ = map(renderer_, 100, 80);
 
 	player_.load_texture("../assets/char.bmp");
 	player_.set_camera(camera_);
