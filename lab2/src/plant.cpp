@@ -1,7 +1,8 @@
 #include <plant.h>
 
-plant::plant(SDL_Renderer *rend, int x, int y)
-	: is_planted_(false), texture_(), timer_(), renderer_(rend), cur_clip(0), sprite_clips() {}
+plant::plant(SDL_Renderer *rend)
+	: is_planted_(false), texture_(), timer_(), renderer_(rend), cur_clip(0), sprite_clips() {
+}
 
 plant::~plant() = default;
 

@@ -2,7 +2,7 @@
 #include <iostream>
 
 player::player(SDL_Renderer *rend, int x, int y)
-	: renderer_(rend), /*pos_x(x), pos_y(y),*/ vel_x(0), vel_y(0), cur_clip(0), sprite_clips(), texture_() {
+	: renderer_(rend), vel_x(0), vel_y(0), cur_clip(0), sprite_clips(), texture_() {
 	collision_box.x = x;
 	collision_box.y = y;
 }
@@ -52,10 +52,7 @@ void player::handle_events(SDL_Event &e) {
 
 bool player::load_texture(const std::string &path) {
 
-	if (!texture_.load(path, renderer_)) {
-		std::cout << "game object cant load a texture with path" << path << std::endl;
-		return false;
-	}
+	texture_.load(path, renderer_);
 
 	sprite_clips[0].x = 19;
 	sprite_clips[0].y = 16;

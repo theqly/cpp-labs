@@ -9,7 +9,7 @@ class texture {
 	texture();
 	~texture();
 
-	bool load(const std::string &path, SDL_Renderer *rend);
+	void load(const std::string &path, SDL_Renderer *rend);
 	void clear();
 	void set_color(Uint8 red, Uint8 green, Uint8 blue);
 	void set_blendmode(SDL_BlendMode blending);

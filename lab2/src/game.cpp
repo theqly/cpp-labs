@@ -16,7 +16,7 @@ game::~game() {
 
 void game::init() {
 	if (SDL_Init(SDL_INIT_EVERYTHING!=0)) {
-		is_running = false;
+		throw std::runtime_error("cant init a SDL");
 	}
 	window_ = SDL_CreateWindow("Sprout Lands",
 							   SDL_WINDOWPOS_CENTERED,

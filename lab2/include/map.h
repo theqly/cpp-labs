@@ -4,6 +4,7 @@
 #include <texture.h>
 #include <plant.h>
 #include <SDL.h>
+#include <vector>
 
 class tile {
   public:
@@ -18,7 +19,7 @@ class tile {
 
 class map {
   public:
-	map(SDL_Renderer *rend);
+	map(SDL_Renderer *rend = nullptr, int width_in_tiles = 0, int height_in_tiles = 0);
 	~map();
 	void load(const std::string &path);
 	void handle_events(SDL_Event &e, player &pl);
@@ -26,15 +27,15 @@ class map {
 	void render(SDL_Rect &camera);
 	bool check_collisions(SDL_Rect a, SDL_Rect b);
   private:
-	int width_in_tiles;
-	int height_in_tiles;
+	int width_in_tiles_;
+	int height_in_tiles_;
 
 	SDL_Renderer *renderer_;
 	texture grass_;
 	texture water_;
 
-	tile *tiles_;
-
+	std::vector<tile> tiles_;
+	std::vector<plant> plants_;
 	plant beet_;
 };
 

@@ -7,7 +7,7 @@
 
 class plant {
   public:
-	plant(SDL_Renderer *rend, int x, int y);
+	plant(SDL_Renderer *rend);
 	~plant();
 	bool load_texture(const std::string &path);
 	void update();
